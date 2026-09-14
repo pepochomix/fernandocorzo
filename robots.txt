@@ -10,4 +10,4 @@ Allow: /*.mp4
 Allow: /*.svg
 
 # Sitemap oficial
-Sitemap: https://fernandocorzo.com/sitemap.xml
+Sitemap: https://fernandocorzo.vercel.app/sitemap.xml

@@ -2,53 +2,53 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
     <url>
-        <loc>https://fernandocorzo.com/</loc>
+        <loc>https://fernandocorzo.vercel.app/</loc>
         <lastmod>2026-09-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
         <image:image>
-            <image:loc>https://fernandocorzo.com/Foto%201.png</image:loc>
+            <image:loc>https://fernandocorzo.vercel.app/Foto%201.png</image:loc>
             <image:title>Paella de Autor Fernando Corzo en Lima</image:title>
             <image:caption>Exquisita paella española preparada en vivo para eventos privados en Lima y Sur Chico</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://fernandocorzo.com/486322580_1159079569350113_2745016994343180327_n.jpg</image:loc>
+            <image:loc>https://fernandocorzo.vercel.app/486322580_1159079569350113_2745016994343180327_n.jpg</image:loc>
             <image:title>Paella de Mariscos con Langostinos en Lima</image:title>
             <image:caption>Paella de mariscos frescos cocinada en vivo por el Chef Fernando Corzo</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://fernandocorzo.com/Pulpo.png</image:loc>
+            <image:loc>https://fernandocorzo.vercel.app/Pulpo.png</image:loc>
             <image:title>Pulpo al Olivo Artesanal Entrada Gourmet</image:title>
             <image:caption>Aperitivo español y piqueos para bodas y celebraciones en Lima</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://fernandocorzo.com/tapas.png</image:loc>
+            <image:loc>https://fernandocorzo.vercel.app/tapas.png</image:loc>
             <image:title>Tapas Españolas Gourmet Fernando Corzo</image:title>
             <image:caption>Variedad de tapas tradicionales para catering exclusivo en Lima</image:caption>
         </image:image>
     </url>
     <url>
-        <loc>https://fernandocorzo.com/carta_marina.html</loc>
+        <loc>https://fernandocorzo.vercel.app/carta_marina.html</loc>
         <lastmod>2026-09-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
         <image:image>
-            <image:loc>https://fernandocorzo.com/ceviche_corvina_gourmet.jpg</image:loc>
+            <image:loc>https://fernandocorzo.vercel.app/ceviche_corvina_gourmet.jpg</image:loc>
             <image:title>Ceviche Clásico de Corvina Salvaje Fernando Corzo</image:title>
             <image:caption>Ceviche de corvina en vivo para eventos y catering exclusivo en Lima</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://fernandocorzo.com/risotto_mariscos_gourmet.jpg</image:loc>
+            <image:loc>https://fernandocorzo.vercel.app/risotto_mariscos_gourmet.jpg</image:loc>
             <image:title>Risotto de Mariscos al Azafrán y Ají Amarillo</image:title>
             <image:caption>Risotto marino flambeado en vivo al pisco para eventos en Lima y Sur Chico</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://fernandocorzo.com/causas_cangrejo_pulpo.jpg</image:loc>
+            <image:loc>https://fernandocorzo.vercel.app/causas_cangrejo_pulpo.jpg</image:loc>
             <image:title>Dúo de Causas de Cangrejo Real y Pulpo al Olivo</image:title>
             <image:caption>Entradas marinas de autor para eventos sociales y corporativos</image:caption>
         </image:image>
         <image:image>
-            <image:loc>https://fernandocorzo.com/conchas_parmesana_gourmet.jpg</image:loc>
+            <image:loc>https://fernandocorzo.vercel.app/conchas_parmesana_gourmet.jpg</image:loc>
             <image:title>Conchas a la Parmesana Gratinadas al Vino Blanco</image:title>
             <image:caption>Conchas de abanico frescas gratinadas al fuego en vivo</image:caption>
         </image:image>
