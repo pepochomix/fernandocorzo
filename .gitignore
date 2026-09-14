@@ -3,3 +3,4 @@ Thumbs.db
 *.tmp
 .vercel
 node_modules/
+pdf_page_*.png
