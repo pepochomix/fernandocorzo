@@ -1,0 +1,13 @@
+BEGIN:VCARD
+VERSION:3.0
+FN:Chef Fernando Corzo | Paellas de Autor & Catering
+N:Corzo;Fernando;;;
+ORG:Fernando Corzo · Paellas de Autor & Show en Vivo
+TITLE:Chef Ejecutivo & Director de Catering
+TEL;TYPE=CELL,VOICE,PREF:+51994092336
+EMAIL;TYPE=INTERNET,PREF:contacto@fernandocorzo.com
+URL;TYPE=WORK,PREF:https://fernandocorzo.com
+ADR;TYPE=WORK:;;Miraflores, San Isidro, Surco, La Molina, Sur Chico;Lima;Lima;15074;Perú
+GEO:-12.1215;-77.0298
+NOTE:Catering de Paellas en Lima Metropolitana y Balnearios del Sur Chico. Show de cocina en vivo para cumpleaños, bodas y eventos corporativos. Tarjeta Inteligente NFC VRS2 & Solución Digital por Consulting José Corzo (soluciones.hubcorzo.com).
+END:VCARD

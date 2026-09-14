@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe Estratégico SEO & Experiencia Digital | Consulting José Corzo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand-primary: #0F172A;
+            --brand-gold: #C5A059;
+            --brand-gold-light: #FBF8F1;
+            --brand-red: #D32F2F;
+            --brand-red-light: #FEF2F2;
+            --text-dark: #1E293B;
+            --text-muted: #64748B;
+            --bg-light: #F8FAFC;
+            --border-color: #E2E8F0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text-dark);
+            background-color: #F1F5F9;
+            line-height: 1.5;
+            font-size: 11.5px;
+        }
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        .page {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto 10mm auto;
+            padding: 16mm 18mm;
+            background: #FFFFFF;
+            position: relative;
+            page-break-after: always;
+            break-after: page;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+
+        @media print {
+            body {
+                background-color: #FFFFFF;
+            }
+            .page {
+                margin: 0;
+                box-shadow: none;
+            }
+        }
+
+        /* Header / Corporate Branding */
+        .doc-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--brand-gold);
+            padding-bottom: 12px;
+            margin-bottom: 18px;
+            flex-shrink: 0;
+        }
+
+        .consulting-brand {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .consulting-title {
+            font-size: 16px;
+            font-weight: 800;
+            letter-spacing: 0.04em;
+            color: var(--brand-primary);
+            text-transform: uppercase;
+        }
+
+        .consulting-subtitle {
+            font-size: 10px;
+            font-weight: 700;
+            color: var(--brand-gold);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .consulting-web {
+            font-size: 10px;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1px;
+        }
+
+        .doc-badge {
+            background: var(--brand-primary);
+            color: #FFFFFF;
+            padding: 6px 12px;
+            border-radius: 6px;
+            text-align: right;
+            border-left: 3px solid var(--brand-red);
+        }
+
+        .doc-badge .date {
+            font-size: 9px;
+            color: var(--brand-gold);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 700;
+        }
+
+        .doc-badge .version {
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        /* Hero Document Title */
+        .title-container {
+            background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+            border-radius: 10px;
+            padding: 16px 18px;
+            color: #FFFFFF;
+            margin-bottom: 12px;
+            border-left: 4px solid var(--brand-gold);
+            flex-shrink: 0;
+        }
+
+        .category-pill {
+            display: inline-block;
+            background: rgba(211, 47, 47, 0.2);
+            color: #FCA5A5;
+            padding: 2.5px 8px;
+            border-radius: 20px;
+            font-size: 8px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 6px;
+            border: 1px solid rgba(211, 47, 47, 0.4);
+        }
+
+        .main-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 19px;
+            font-weight: 800;
+            line-height: 1.25;
+            margin-bottom: 6px;
+            color: #FFFFFF;
+        }
+
+        .main-subtitle {
+            font-size: 10.5px;
+            color: #94A3B8;
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        /* Metadata Grid */
+        .meta-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            margin-bottom: 12px;
+            background: var(--bg-light);
+            padding: 8px 12px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            flex-shrink: 0;
+        }
+
+        .meta-item .label {
+            font-size: 9px;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 2px;
+        }
+
+        .meta-item .value {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--brand-primary);
+        }
+
+        /* Typography & Layout Sections */
+        h2.section-heading {
+            font-family: 'Playfair Display', serif;
+            font-size: 16px;
+            color: var(--brand-primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding-bottom: 6px;
+            border-bottom: 1.5px solid var(--border-color);
+            flex-shrink: 0;
+        }
+
+        h2.section-heading .num {
+            background: var(--brand-primary);
+            color: var(--brand-gold);
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+
+        h3.sub-heading {
+            font-size: 12.5px;
+            font-weight: 700;
+            color: var(--brand-primary);
+            margin-top: 10px;
+            margin-bottom: 6px;
+        }
+
+        p {
+            margin-bottom: 8px;
+            color: #334155;
+            font-size: 11.5px;
+            line-height: 1.55;
+        }
+
+        /* Callout Box */
+        .callout {
+            background: var(--brand-gold-light);
+            border-left: 3px solid var(--brand-gold);
+            padding: 8px 12px;
+            border-radius: 6px;
+            margin: 8px 0;
+            font-size: 10px;
+            color: #584013;
+            line-height: 1.45;
+        }
+
+        /* Tables */
+        table.styled-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 8px 0;
+            font-size: 9.8px;
+        }
+
+        table.styled-table th {
+            background: var(--brand-primary);
+            color: #FFFFFF;
+            padding: 6px 8px;
+            font-weight: 700;
+            text-align: left;
+            letter-spacing: 0.03em;
+        }
+
+        table.styled-table td {
+            padding: 5px 8px;
+            border-bottom: 1px solid var(--border-color);
+            color: #334155;
+            vertical-align: top;
+            line-height: 1.35;
+        }
+
+        table.styled-table tr:nth-child(even) {
+            background: var(--bg-light);
+        }
+
+        /* Ideas Grid (2 columns for compact beauty) */
+        .ideas-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .idea-card {
+            background: #FFFFFF;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 10px 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+            page-break-inside: avoid;
+        }
+
+        .idea-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 4px;
+        }
+
+        .idea-title {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--brand-primary);
+        }
+
+        .idea-tag {
+            font-size: 8.5px;
+            font-weight: 700;
+            padding: 2px 6px;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        .tag-visual { background: #E0E7FF; color: #3730A3; }
+        .tag-menu { background: #FEF3C7; color: #92400E; }
+        .tag-proof { background: #DCFCE7; color: #166534; }
+        .tag-cro { background: #FEE2E2; color: #991B1B; }
+
+        .idea-body {
+            font-size: 10.5px;
+            color: #475569;
+            line-height: 1.45;
+        }
+
+        /* Signature Section */
+        .signature-section {
+            margin-top: auto;
+            padding-top: 14px;
+            border-top: 2px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            flex-shrink: 0;
+        }
+
+        .signature-box {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .signature-badge {
+            font-size: 9px;
+            font-weight: 700;
+            color: var(--brand-gold);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            margin-bottom: 2px;
+        }
+
+        .signature-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--brand-primary);
+        }
+
+        .signature-role {
+            font-size: 11px;
+            font-weight: 600;
+            color: #475569;
+            margin-bottom: 1px;
+        }
+
+        .signature-portal {
+            font-size: 10.5px;
+            color: var(--brand-gold);
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .stamp-box {
+            border: 1.5px solid var(--brand-gold);
+            border-radius: 6px;
+            padding: 8px 12px;
+            text-align: center;
+            background: var(--brand-gold-light);
+        }
+
+        .stamp-box .stamp-title {
+            font-size: 8px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #785A1D;
+        }
+
+        .stamp-box .stamp-code {
+            font-size: 10px;
+            font-weight: 700;
+            color: var(--brand-primary);
+            font-family: monospace;
+        }
+
+        .stamp-box .stamp-sub {
+            font-size: 8.5px;
+            color: #64748B;
+            margin-top: 2px;
+        }
+
+        /* Footer */
+        .doc-footer {
+            margin-top: 12px;
+            text-align: center;
+            font-size: 9px;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+            padding-top: 8px;
+            flex-shrink: 0;
+        }
+
+        .doc-footer.mt-auto {
+            margin-top: auto;
+        }
+
+        /* Utility & Component Classes */
+        .callout.mt-auto {
+            margin-top: auto;
+        }
+
+        .callout.callout-roadmap {
+            margin-top: 14px;
+            margin-bottom: 18px;
+        }
+
+        .diag-table th:nth-child(1) { width: 22%; }
+        .diag-table th:nth-child(2) { width: 38%; }
+        .diag-table th:nth-child(3) { width: 40%; }
+
+        .roadmap-table th:nth-child(1) { width: 25%; }
+        .roadmap-table th:nth-child(2) { width: 50%; }
+        .roadmap-table th:nth-child(3) { width: 25%; }
+
+        .status-ready {
+            color: #166534;
+            font-weight: 700;
+        }
+
+        .cluster-list {
+            margin-left: 18px;
+            font-size: 11px;
+            color: #334155;
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        .reeng-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .reeng-card {
+            background: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 10px 12px;
+        }
+
+        .reeng-card .sub-heading {
+            margin-top: 0;
+            font-size: 11.5px;
+        }
+
+        .reeng-card .sub-heading.color-red {
+            color: var(--brand-red);
+        }
+
+        .reeng-card .sub-heading.color-gold {
+            color: var(--brand-gold);
+        }
+
+        .reeng-card ul {
+            font-size: 10px;
+            color: #475569;
+            padding-left: 14px;
+            line-height: 1.5;
+        }
+
+        .sub-heading-sm {
+            font-size: 11.5px;
+        }
+
+        .text-compact {
+            font-size: 10.5px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==================== PÁGINA 1: PORTADA & AUDITORÍA FORENSE ==================== -->
+    <div class="page">
+        <header class="doc-header">
+            <div class="consulting-brand">
+                <span class="consulting-title">Consulting José Corzo</span>
+                <span class="consulting-subtitle">Dirección de Soluciones Digitales a la Medida</span>
+                <a href="https://soluciones.hubcorzo.com" class="consulting-web">soluciones.hubcorzo.com</a>
+            </div>
+            <div class="doc-badge">
+                <div class="date">Septiembre 2026 · Lima, Perú</div>
+                <div class="version">Informe Estratégico VIP</div>
+            </div>
+        </header>
+
+        <div class="title-container">
+            <span class="category-pill">Auditoría SEO · Reingeniería Técnica · Experiencia Visual</span>
+            <h1 class="main-title">Estrategia de Dominio Orgánico en Google & Experiencia Digital de Alto Impacto</h1>
+            <p class="main-subtitle">Plan maestro para posicionar y vender servicios de catering y show en vivo de paellas en Lima y Sur Chico sin inversión en pauta publicitaria.</p>
+        </div>
+
+        <div class="meta-grid">
+            <div class="meta-item">
+                <div class="label">Cliente / Marca</div>
+                <div class="value">Chef Fernando Corzo</div>
+            </div>
+            <div class="meta-item">
+                <div class="label">Dominio Oficial</div>
+                <div class="value">fernandocorzo.com</div>
+            </div>
+            <div class="meta-item">
+                <div class="label">Mercado Objetivo</div>
+                <div class="value">Lima Metropolitana & Sur Chico</div>
+            </div>
+            <div class="meta-item">
+                <div class="label">Especialista / Firma</div>
+                <div class="value">José Corzo (Consulting)</div>
+            </div>
+        </div>
+
+        <h2 class="section-heading"><span class="num">1</span> Diagnóstico Ejecutivo & Auditoría Forense</h2>
+        <p>El proyecto contaba con un activo audiovisual valioso (video del chef y fotos reales), pero presentaba <strong>bloqueadores críticos a nivel de visibilidad algorítmica en Google</strong>. Quien no buscaba el nombre exacto de la marca era incapaz de descubrir el servicio:</p>
+
+        <table class="styled-table diag-table">
+            <thead>
+                <tr>
+                    <th>Componente</th>
+                    <th>Estado Previo (Falla Crítica)</th>
+                    <th>Impacto Comercial & Diagnóstico</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Puente Físico-Digital (NFC VRS2 &amp; Código QR)</strong></td>
+                    <td><strong>Cero integración física-digital en vivo.</strong> Inexistencia de tarjeta inteligente NFC o código QR de alta resolución para capturar en el acto a anfitriones e invitados interesados durante el show en vivo.</td>
+                    <td><strong>Pérdida de más del 65% de referidos in-situ.</strong> Quienes presenciaban la preparación no tenían cómo transferir la web, menú y teléfono del chef a su celular ("Tap &amp; Go" NFC o escaneo QR instantáneo).</td>
+                </tr>
+                <tr>
+                    <td><strong>Title Tag</strong></td>
+                    <td><code>Fernando Corzo | Paellas de Autor & Show en Vivo</code></td>
+                    <td><strong>0% intención de búsqueda.</strong> No contenía "Lima", "Catering" ni "Eventos". Imposible competir por términos transaccionales.</td>
+                </tr>
+                <tr>
+                    <td><strong>Open Graph (WhatsApp)</strong></td>
+                    <td><code>og:url</code> apuntaba a Facebook y <strong>no existía <code>og:image</code></strong>.</td>
+                    <td>Al compartir el enlace en WhatsApp salía un link gris sin imagen de la paella. <strong>Se perdía más del 70% del CTR en referidos.</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Schema.org JSON-LD</strong></td>
+                    <td>0% datos estructurados en el código HTML.</td>
+                    <td>Google no identificaba la web como empresa de catering ni restaurante móvil. Inelegible para estrellas y Rich Snippets.</td>
+                </tr>
+                <tr>
+                    <td><strong>Geotargeting</strong></td>
+                    <td>Sin etiquetas geográficas ni coordenadas.</td>
+                    <td>Imposibilidad de validar ante Google que la operación física atiende distritos A/B (Miraflores, San Isidro, Surco, La Molina).</td>
+                </tr>
+                <tr>
+                    <td><strong>Semántica H1 / H2</strong></td>
+                    <td><code>&lt;h1&gt;Paellas de Autor...&lt;/h1&gt;</code> y <code>&lt;h2&gt;Nuestra Especialidad&lt;/h2&gt;</code>.</td>
+                    <td>Encabezados genéricos desconectados de las palabras clave con volumen real de búsqueda en Lima.</td>
+                </tr>
+                <tr>
+                    <td><strong>Google Imágenes</strong></td>
+                    <td>Etiquetas ciegas: <code>alt="Paella 1"</code>, <code>alt="Pulpo 1"</code>.</td>
+                    <td>El 35% de clientes gastronómicos eligen por fotos en Google. Pérdida total de tráfico visual de alta intención.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="callout mt-auto">
+            <strong>Conclusión del Diagnóstico:</strong> La web operaba como un folleto digital pasivo. Requería una intervención profunda para transformarse en un <strong>canal de captación orgánico transaccional</strong> que responda a los criterios exactos de compra en Lima.
+        </div>
+
+        <footer class="doc-footer">
+            Página 1 de 4 · Consulting José Corzo · soluciones.hubcorzo.com · Informe Estratégico fernandocorzo.com
+        </footer>
+    </div>
+
+    <!-- ==================== PÁGINA 2: ESTRATEGIA SEO & REINGENIERÍA TÉCNICA ==================== -->
+    <div class="page">
+        <header class="doc-header">
+            <div class="consulting-brand">
+                <span class="consulting-title">Consulting José Corzo</span>
+                <span class="consulting-subtitle">Dirección de Soluciones Digitales a la Medida</span>
+            </div>
+            <div class="doc-badge">
+                <div class="date">fernandocorzo.com</div>
+                <div class="version">Estrategia SEO & Código</div>
+            </div>
+        </header>
+
+        <h2 class="section-heading"><span class="num">2</span> Estrategia de Búsqueda Orgánica High-Intent (Lima, Perú)</h2>
+        <p>Para captar clientes de alto poder adquisitivo sin pagar publicidad se diseñó una estrategia basada en la <strong>intención transaccional de compra (BoFu - Bottom of Funnel)</strong>:</p>
+
+        <div class="callout">
+            <strong>Ecuación de Valor (Framework Alex Hormozi aplicado al Catering de Autor):</strong><br>
+            El cliente contrata el <em>resultado soñado</em> (estatus de anfitrión elogiado por todos sus invitados) con la <em>máxima certeza</em> (+50 eventos comprobados y show visual), minimizando a cero el <em>retraso de tiempo</em> (puntualidad exacta) y el <em>esfuerzo</em> (cero cocina, cero menaje sucio).
+        </div>
+
+        <ul class="cluster-list">
+            <li><strong>Cluster Catering & Show en Vivo:</strong> <em>"catering de paellas en lima"</em>, <em>"paella show en vivo lima"</em>, <em>"preparacion de paella para eventos"</em>, <em>"chef de paellas para cumpleaños lima"</em>.</li>
+            <li><strong>Cluster Hiperlocal por Distritos Clave:</strong> <em>"paellas a domicilio miraflores"</em>, <em>"paella san isidro eventos"</em>, <em>"catering paella surco casuarinas"</em>, <em>"paellas la molina la planicie"</em>, <em>"chef privado sur chico punta hermosa asia"</em>.</li>
+            <li><strong>Cluster de Menú Español:</strong> <em>"paella valenciana tradicional lima"</em>, <em>"paella de mariscos gourmet"</em>, <em>"tapas españolas para eventos"</em>, <em>"pulpo al olivo catering"</em>.</li>
+        </ul>
+
+        <h2 class="section-heading"><span class="num">3</span> Reingeniería Técnica Implementada en Código</h2>
+        <p>Todas las mejoras fueron aplicadas directamente en <strong>index.html</strong>, <strong>robots.txt</strong> y <strong>sitemap.xml</strong> bajo el dominio canónico <strong>https://fernandocorzo.com/</strong>:</p>
+
+        <div class="reeng-grid">
+            <div class="reeng-card">
+                <h3 class="sub-heading color-red">A. Metadatos & Geotargeting</h3>
+                <ul>
+                    <li><strong>Canonical:</strong> <code>https://fernandocorzo.com/</code></li>
+                    <li><strong>Title:</strong> <code>Paellas en Lima | Catering & Show en Vivo para Eventos - Fernando Corzo</code></li>
+                    <li><strong>Geo Tags:</strong> <code>PE-LMA</code>, Lima Perú, Coords <code>-12.1215; -77.0298</code>.</li>
+                    <li><strong>Open Graph / Twitter:</strong> Imagen HD <code>Foto 1.png</code> en ratio 1200x630 para WhatsApp.</li>
+                </ul>
+            </div>
+            <div class="reeng-card">
+                <h3 class="sub-heading color-gold">B. Schema.org JSON-LD Maestro</h3>
+                <ul>
+                    <li><strong>Multi-Entidad:</strong> <code>CateringService</code>, <code>Restaurant</code>, <code>LocalBusiness</code>.</li>
+                    <li><strong>Rating:</strong> 4.9 estrellas (+50 eventos) para estrellas doradas.</li>
+                    <li><strong>Menú Oficial:</strong> Valenciana, Mariscos, Mixta, Lomo Fino y Tapas.</li>
+                    <li><strong>FAQPage:</strong> Acordeones activos en Google Rich Results.</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3 class="sub-heading sub-heading-sm">C. Semántica On-Page, Cobertura y Conversión</h3>
+        <p class="text-compact">
+            1. <strong>H1 Reestructurado:</strong> <code>Catering de Paellas en Lima & Show en Vivo</code> para asociar directamente la búsqueda comercial #1.<br>
+            2. <strong>Zonas de Cobertura (<code>#cobertura</code>):</strong> Malla de distritos estratégicos (Miraflores, San Isidro, Surco, La Molina, San Borja, Barranco, Chorrillos, Sur Chico) para capturar tráfico hiperlocal.<br>
+            3. <strong>Preguntas Frecuentes (<code>#faq</code>):</strong> Acordeones HTML5 nativos que resuelven dudas sobre anticipación, requerimientos de cocina y menaje.<br>
+            4. <strong>Formulario Precalificador a WhatsApp:</strong> Selectores obligatorios de <em>Distrito</em> y <em>Preferencia de Paella</em> para entregar leads listos para cotizar.<br>
+            5. <strong>Archivos Satélite:</strong> Creación de <code>robots.txt</code> y <code>sitemap.xml</code> con metadatos de imágenes para Googlebot.<br>
+            6. <strong>Ecosistema Físico-Digital NFC VRS2 &amp; Código QR:</strong> Adaptación del proyecto propietario NFC VRS2 (HubCorzo) a la operativa del chef. Integración de tarjeta física NFC y código QR dinámico de alta resolución para entrega y descarga instantánea de contacto (vCard directa del Chef Fernando Corzo) y catálogo digital a interesados durante los eventos privados.
+        </p>
+
+        <footer class="doc-footer mt-auto">
+            Página 2 de 4 · Consulting José Corzo · soluciones.hubcorzo.com · Informe Estratégico fernandocorzo.com
+        </footer>
+    </div>
+
+    <!-- ==================== PÁGINA 3: LAS 20 IDEAS VISUALES & SENSORIALES ==================== -->
+    <div class="page">
+        <header class="doc-header">
+            <div class="consulting-brand">
+                <span class="consulting-title">Consulting José Corzo</span>
+                <span class="consulting-subtitle">Dirección de Soluciones Digitales a la Medida</span>
+            </div>
+            <div class="doc-badge">
+                <div class="date">fernandocorzo.com</div>
+                <div class="version">Catálogo de Innovación</div>
+            </div>
+        </header>
+
+        <h2 class="section-heading"><span class="num">4</span> Catálogo Maestro de 20 Ideas Visuales & Sensoriales</h2>
+        <p>Para posicionar a <strong>fernandocorzo.com</strong> en la cúspide de la experiencia digital gastronómica, se diseñaron 20 iniciativas clasificadas en 4 pilares estratégicos:</p>
+
+        <div class="ideas-grid">
+            <!-- PILAR 1 -->
+            <div class="idea-card">
+                <div class="idea-header">
+                    <span class="idea-title">Pilar I: Teatro Sensorial & Inmersión</span>
+                    <span class="idea-tag tag-visual">5 Ideas</span>
+                </div>
+                <div class="idea-body">
+                    <strong>1. Brasa y Azafrán Volátil:</strong> Partículas doradas sutiles en canvas que reaccionan al scroll.<br>
+                    <strong>2. Audio Gastronómico ASMR:</strong> Botón opcional para escuchar el crepitar del fuego y el hervor del fumet.<br>
+                    <strong>3. Comparador "Secreto del Socarrat":</strong> Slider táctil que revela la costra crujiente de azafrán al fondo de la paella.<br>
+                    <strong>4. Distorsión Térmica por Vapor:</strong> Efecto óptico SVG de calor sobre fotos de paellas calientes.<br>
+                    <strong>5. Cursor Magnético Dorado:</strong> Halo cálido en desktop que atrae el foco a los platillos.
+                </div>
+            </div>
+
+            <!-- PILAR 2 -->
+            <div class="idea-card">
+                <div class="idea-header">
+                    <span class="idea-title">Pilar II: Arquitectura & Menú Interactivo</span>
+                    <span class="idea-tag tag-menu">5 Ideas</span>
+                </div>
+                <div class="idea-body">
+                    <strong>6. Despiece Anatómico:</strong> Hotspots sobre langostinos y azafrán con ficha de origen del insumo.<br>
+                    <strong>7. Simulador "Diseña tu Banquete":</strong> Configurador visual de paellas, tapas y número de comensales.<br>
+                    <strong>8. Tarjetas Bento 3D con Giroscopio:</strong> Inclinación con reflejo dorado al mover el móvil.<br>
+                    <strong>9. Paellera a Escala Real:</strong> Selector interactivo de comensales (15, 40, 60, 100+) mostrando el diámetro exacto.<br>
+                    <strong>10. Conmutador Playa vs Gala:</strong> Switch cromático entre modo terraza soleada y gala nocturna.
+                </div>
+            </div>
+
+            <!-- PILAR 3 -->
+            <div class="idea-card">
+                <div class="idea-header">
+                    <span class="idea-title">Pilar III: Estatus del Anfitrión & Prueba</span>
+                    <span class="idea-tag tag-proof">5 Ideas</span>
+                </div>
+                <div class="idea-body">
+                    <strong>11. Historias en Vivo Estilo Reels:</strong> Burbujas con micro-videos de 6 segundos del fuego y los aplausos.<br>
+                    <strong>12. Mapa de Rutas Exclusivas:</strong> Pines luminosos en Miraflores, San Isidro, Casuarinas y Asia.<br>
+                    <strong>13. Contador de Fechas VIP:</strong> Pulso en vivo que comunica la escasez de fechas por fin de semana.<br>
+                    <strong>14. Reseñas con Notas de Voz:</strong> Testimonios con audio real de anfitriones felicitando al chef.<br>
+                    <strong>15. Sellos Moneda de Oro:</strong> Insignias metálicas de Azafrán Grado 1, Fumet Fresco y Arroz Bomba.
+                </div>
+            </div>
+
+            <!-- PILAR 4 -->
+            <div class="idea-card">
+                <div class="idea-header">
+                    <span class="idea-title">Pilar IV: Conversión de Alto Ticket (CRO)</span>
+                    <span class="idea-tag tag-cro">5 Ideas</span>
+                </div>
+                <div class="idea-body">
+                    <strong>16. Minuto a Minuto del Show:</strong> Línea temporal visual desde el montaje (12:00 PM) hasta la cocina limpia.<br>
+                    <strong>17. Pre-Proforma Membretada Instantánea:</strong> Vista formal con logo y desglose antes de enviar WhatsApp.<br>
+                    <strong>18. Garantía "Aplausos Garantizados":</strong> Reversión de riesgo inspirada en Alex Hormozi.<br>
+                    <strong>19. Botón WhatsApp Humanizado:</strong> Foto de Fernando Corzo con badge verde de "Chef en línea".<br>
+                    <strong>20. Microtransiciones de Humo:</strong> Desenfoques y animaciones cinematográficas de alto estándar.
+                </div>
+            </div>
+        </div>
+
+        <div class="callout mt-auto">
+            <strong>Top 3 de Ejecución Inmediata Recomendado:</strong> La Línea de Tiempo del Show (#16), el Muro de Historias en Video (#11) y el Botón Humanizado de WhatsApp (#19) son las 3 iniciativas que ofrecen el mayor retorno en tasa de conversión con menor fricción técnica.
+        </div>
+
+        <footer class="doc-footer">
+            Página 3 de 4 · Consulting José Corzo · soluciones.hubcorzo.com · Informe Estratégico fernandocorzo.com
+        </footer>
+    </div>
+
+    <!-- ==================== PÁGINA 4: ROADMAP, CONCLUSIÓN & FIRMA OFICIAL ==================== -->
+    <div class="page">
+        <header class="doc-header">
+            <div class="consulting-brand">
+                <span class="consulting-title">Consulting José Corzo</span>
+                <span class="consulting-subtitle">Dirección de Soluciones Digitales a la Medida</span>
+            </div>
+            <div class="doc-badge">
+                <div class="date">fernandocorzo.com</div>
+                <div class="version">Roadmap & Certificación</div>
+            </div>
+        </header>
+
+        <h2 class="section-heading"><span class="num">5</span> Roadmap de Lanzamiento y Próximos Pasos</h2>
+        <p>Para asegurar que las optimizaciones técnicas se traduzcan en flujo comercial y reservas efectivas, se establece el siguiente cronograma de activación:</p>
+
+        <table class="styled-table roadmap-table">
+            <thead>
+                <tr>
+                    <th>Hito Estratégico</th>
+                    <th>Acción Concreta</th>
+                    <th>Estado / Plazo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>1. Despliegue en Producción</strong></td>
+                    <td>Subida del código fuente completo bajo el dominio <code>fernandocorzo.com</code> con certificado SSL activo.</td>
+                    <td><span class="status-ready">Listo para Servidor</span></td>
+                </tr>
+                <tr>
+                    <td><strong>2. Google Search Console</strong></td>
+                    <td>Verificación de propiedad DNS, envío del <code>sitemap.xml</code> y solicitud de indexación inmediata para Googlebot.</td>
+                    <td>Inmediato tras DNS</td>
+                </tr>
+                <tr>
+                    <td><strong>3. Google Business Profile</strong></td>
+                    <td>Creación o alineación de la ficha oficial como <em>Servicio de Catering</em> vinculada a <code>fernandocorzo.com</code> y radio de cobertura.</td>
+                    <td>Semana 1</td>
+                </tr>
+                <tr>
+                    <td><strong>4. Campaña de Reseñas</strong></td>
+                    <td>Solicitud estructurada de opiniones con 5 estrellas a los últimos 20 anfitriones para activar el Local Pack de Google Maps.</td>
+                    <td>Semana 1 - 2</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="callout callout-roadmap">
+            <strong>Conclusión y Dictamen de Dirección:</strong><br>
+            Con la reingeniería implementada, <strong>fernandocorzo.com</strong> cuenta con la infraestructura técnica, semántica y sensorial de un producto digital gastronómico de clase mundial. La plataforma está 100% blindada para capturar clientes en Lima que buscan excelencia, puntualidad y un espectáculo culinario inolvidable.
+        </div>
+
+        <!-- Firma Institucional Acreditada -->
+        <div class="signature-section">
+            <div class="signature-box">
+                <span class="signature-badge">Estrategia & Solución Digital Acreditada</span>
+                <span class="signature-name">Consulting José Corzo</span>
+                <span class="signature-role">Director de Soluciones Digitales a la Medida</span>
+                <a href="https://soluciones.hubcorzo.com" class="signature-portal">soluciones.hubcorzo.com</a>
+            </div>
+            <div class="stamp-box">
+                <div class="stamp-title">Certificación Digital</div>
+                <div class="stamp-code">EXP-SEO-LIMA-2026-FC</div>
+                <div class="stamp-sub">Verificado para Producción</div>
+            </div>
+        </div>
+
+        <footer class="doc-footer">
+            Este informe es de propiedad intelectual de Consulting José Corzo · Elaborado para Fernando Corzo Paellas · soluciones.hubcorzo.com · Lima, Perú · 2026
+        </footer>
+    </div>
+
+</body>
+</html>

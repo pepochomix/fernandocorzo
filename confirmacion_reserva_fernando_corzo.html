@@ -1,0 +1,1501 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constancia de Reserva & Ficha Técnica | Fernando Corzo Paellas y Más</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --brand-primary: #0B0F17;
+            --brand-card: #131B2A;
+            --brand-gold: #C5A059;
+            --brand-gold-dark: #9A7B38;
+            --brand-gold-light: #F9F5EC;
+            --brand-red: #D32F2F;
+            --brand-red-light: #FEF2F2;
+            --text-dark: #0F172A;
+            --text-muted: #64748B;
+            --bg-body: #E2E8F0;
+            --border-color: #E2E8F0;
+            --border-gold: rgba(197, 160, 89, 0.4);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-body);
+            line-height: 1.45;
+            font-size: 11px;
+            padding-bottom: 40px;
+        }
+
+        @page {
+            size: A4 portrait;
+            margin: 0;
+        }
+
+        /* Toolbar de Acción Superior */
+        .top-toolbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(11, 15, 23, 0.95);
+            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(197, 160, 89, 0.3);
+            padding: 12px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+            color: #FFFFFF;
+        }
+
+        .toolbar-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .toolbar-title {
+            font-weight: 700;
+            font-size: 13px;
+            color: var(--brand-gold);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .toolbar-subtitle {
+            font-size: 11px;
+            color: #94A3B8;
+        }
+
+        .toolbar-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-size: 11.5px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            border: none;
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, #C5A059 0%, #E6CA85 100%);
+            color: #0B0F17;
+            box-shadow: 0 2px 10px rgba(197, 160, 89, 0.35);
+        }
+
+        .btn-gold:hover {
+            filter: brightness(1.1);
+            transform: translateY(-1px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #F1F5F9;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255,255,255,0.08);
+            border-color: var(--brand-gold);
+            color: var(--brand-gold);
+        }
+
+        .btn-success {
+            background: #25D366;
+            color: #FFFFFF;
+        }
+
+        .btn-success:hover {
+            background: #20BD5C;
+        }
+
+        /* Contenedor A4 de Páginas */
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 20px auto;
+            padding: 16mm 18mm;
+            background: #FFFFFF;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-sizing: border-box;
+            page-break-after: always;
+            break-after: page;
+        }
+
+        @media print {
+            body {
+                background-color: #FFFFFF;
+                padding: 0;
+            }
+            .top-toolbar {
+                display: none !important;
+            }
+            .page {
+                margin: 0;
+                box-shadow: none;
+                width: 210mm;
+                height: 297mm;
+                padding: 14mm 16mm;
+            }
+            .editable-active {
+                outline: none !important;
+            }
+        }
+
+        /* Estilo Editable en Pantalla */
+        [contenteditable="true"] {
+            outline: 1.5px dashed rgba(197, 160, 89, 0.7);
+            border-radius: 3px;
+            padding: 1px 3px;
+            background: rgba(197, 160, 89, 0.04);
+            transition: all 0.2s;
+        }
+
+        [contenteditable="true"]:focus {
+            background: rgba(197, 160, 89, 0.12);
+            outline: 2px solid var(--brand-gold);
+        }
+
+        /* HEADER MEMBRETADO PREMIUM */
+        .header-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--brand-gold);
+            padding-bottom: 12px;
+            margin-bottom: 14px;
+        }
+
+        .header-section.header-sub {
+            margin-bottom: 10px;
+            padding-bottom: 8px;
+        }
+
+        .header-section.header-sub h1 {
+            font-size: 16px;
+        }
+
+        .header-section.header-sub .doc-code {
+            font-size: 12px;
+        }
+
+        .brand-block {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .brand-logo-frame {
+            width: 70px;
+            height: 70px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1.5px solid var(--brand-gold);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            background: #0B0F17;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .brand-logo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .brand-titles h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--brand-primary);
+            line-height: 1.15;
+            letter-spacing: -0.01em;
+        }
+
+        .brand-titles .tagline {
+            font-size: 9.5px;
+            text-transform: uppercase;
+            letter-spacing: 0.22em;
+            color: var(--brand-gold-dark);
+            font-weight: 700;
+            margin-top: 2px;
+        }
+
+        .brand-titles .contact-line {
+            font-size: 9.5px;
+            color: var(--text-muted);
+            margin-top: 3px;
+            display: flex;
+            gap: 12px;
+            font-weight: 500;
+        }
+
+        .status-badge-box {
+            text-align: right;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 4px;
+        }
+
+        .status-pill {
+            background: #166534;
+            color: #FFFFFF;
+            font-size: 9px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            padding: 4px 10px;
+            border-radius: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            box-shadow: 0 2px 6px rgba(22, 101, 52, 0.25);
+        }
+
+        .doc-code {
+            font-family: 'Playfair Display', serif;
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--brand-primary);
+            letter-spacing: 0.05em;
+        }
+
+        .doc-date {
+            font-size: 9px;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        /* HERO DEL DOCUMENTO */
+        .hero-banner {
+            background: linear-gradient(135deg, #0B0F17 0%, #1A2436 100%);
+            color: #FFFFFF;
+            border-radius: 8px;
+            padding: 12px 16px;
+            margin-bottom: 12px;
+            border-left: 4px solid var(--brand-gold);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .hero-left h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 15px;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 2px;
+        }
+
+        .hero-left p {
+            font-size: 10px;
+            color: #CBD5E1;
+            line-height: 1.35;
+        }
+
+        .hero-stamp {
+            background: rgba(197, 160, 89, 0.15);
+            border: 1px solid var(--brand-gold);
+            padding: 5px 10px;
+            border-radius: 6px;
+            text-align: center;
+            min-width: 130px;
+        }
+
+        .hero-stamp .stamp-lbl {
+            font-size: 7.5px;
+            text-transform: uppercase;
+            color: #E2E8F0;
+            letter-spacing: 0.1em;
+            font-weight: 700;
+        }
+
+        .hero-stamp .stamp-val {
+            font-size: 11px;
+            font-weight: 800;
+            color: #F8DA8D;
+            letter-spacing: 0.04em;
+        }
+
+        /* GRID METADATOS DEL EVENTO */
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--brand-primary);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 8px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 4px;
+        }
+
+        .section-title i {
+            color: var(--brand-gold-dark);
+            width: 14px;
+            height: 14px;
+        }
+
+        .meta-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .meta-card {
+            background: #F8FAFC;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 7px 10px;
+        }
+
+        .meta-card.highlight {
+            background: #FDFBF7;
+            border-color: rgba(197, 160, 89, 0.4);
+            border-left: 3px solid var(--brand-gold);
+        }
+
+        .meta-label {
+            font-size: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-muted);
+            font-weight: 700;
+            margin-bottom: 2px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .meta-value {
+            font-size: 10.5px;
+            font-weight: 700;
+            color: var(--brand-primary);
+        }
+
+        .meta-sub {
+            font-size: 8.5px;
+            color: #64748B;
+            margin-top: 1px;
+        }
+
+        /* PROPUESTA GASTRONÓMICA */
+        .menu-spec-box {
+            background: #FFFFFF;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 10px 12px;
+            margin-bottom: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+
+        .menu-header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 6px;
+        }
+
+        .dish-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 13.5px;
+            font-weight: 700;
+            color: var(--brand-primary);
+        }
+
+        .dish-badge {
+            background: var(--brand-gold-light);
+            color: var(--brand-gold-dark);
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            font-size: 8.5px;
+            font-weight: 700;
+            padding: 2px 6px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .dish-description {
+            font-size: 10px;
+            color: #475569;
+            line-height: 1.4;
+            margin-bottom: 8px;
+        }
+
+        .val-points-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 6px;
+            margin-top: 6px;
+            padding-top: 6px;
+            border-top: 1px dashed var(--border-color);
+        }
+
+        .val-point {
+            background: #F8FAFC;
+            padding: 5px 6px;
+            border-radius: 5px;
+            border: 1px solid #EEF2F6;
+        }
+
+        .val-point-title {
+            font-size: 8px;
+            font-weight: 800;
+            color: var(--brand-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            display: flex;
+            align-items: center;
+            gap: 3px;
+        }
+
+        .val-point-title i {
+            color: var(--brand-gold-dark);
+            width: 10px;
+            height: 10px;
+        }
+
+        .val-point-desc {
+            font-size: 8px;
+            color: #64748B;
+            margin-top: 1px;
+            line-height: 1.25;
+        }
+
+        /* TABLA FINANCIERA DE LIQUIDACIÓN */
+        .finance-card {
+            background: #F8FAFC;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 10px 12px;
+            margin-bottom: 12px;
+        }
+
+        .finance-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 10px;
+        }
+
+        .finance-table th {
+            text-align: left;
+            padding: 5px 8px;
+            background: #EEF2F6;
+            color: var(--brand-primary);
+            font-weight: 700;
+            font-size: 8.5px;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            border-radius: 4px;
+        }
+
+        .finance-table th:nth-child(1) { width: 45%; }
+        .finance-table th:nth-child(2) { width: 15%; }
+        .finance-table th:nth-child(3) { width: 20%; }
+        .finance-table th:nth-child(4) { width: 20%; }
+
+        .finance-table td {
+            padding: 6px 8px;
+            border-bottom: 1px solid #E2E8F0;
+            color: #334155;
+        }
+
+        .finance-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .finance-row-total {
+            background: #FFFFFF;
+        }
+
+        .finance-row-total .total-amount {
+            font-size: 11px;
+            color: var(--brand-primary);
+        }
+
+        .finance-row-paid {
+            background: #F0FDF4;
+        }
+
+        .finance-row-paid .ref-text {
+            font-size: 8.5px;
+            color: #166534;
+        }
+
+        .finance-row-paid .status-label {
+            color: #166534;
+            font-weight: 700;
+        }
+
+        .finance-row-paid .status-amount {
+            color: #166534;
+            font-size: 11px;
+        }
+
+        .finance-row-pending {
+            background: #FFFBEB;
+        }
+
+        .finance-row-pending .ref-text {
+            font-size: 8.5px;
+            color: #92400E;
+        }
+
+        .finance-row-pending .status-label {
+            color: #92400E;
+            font-weight: 700;
+        }
+
+        .finance-row-pending .status-amount {
+            color: #92400E;
+            font-size: 12px;
+        }
+
+        .text-right {
+            text-align: right;
+        }
+
+        .amount-bold {
+            font-weight: 800;
+            color: var(--brand-primary);
+        }
+
+        .paid-tag {
+            background: #DCFCE7;
+            color: #166534;
+            font-weight: 800;
+            font-size: 8.5px;
+            padding: 2px 6px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        .pending-tag {
+            background: #FEF3C7;
+            color: #92400E;
+            font-weight: 800;
+            font-size: 8.5px;
+            padding: 2px 6px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        .payment-methods-box {
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px dashed #CBD5E1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 8.5px;
+            color: #475569;
+        }
+
+        .payment-pills-wrap {
+            display: flex;
+            gap: 4px;
+        }
+
+        .payment-pill {
+            background: #FFFFFF;
+            border: 1px solid #CBD5E1;
+            padding: 2px 7px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        /* FOOTER DE PÁGINA */
+        .page-footer {
+            margin-top: auto;
+            border-top: 1px solid var(--border-color);
+            padding-top: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 8px;
+            color: var(--text-muted);
+        }
+
+        .page-footer .brand-ref {
+            font-weight: 700;
+            color: var(--brand-primary);
+        }
+
+        /* PÁGINA 2: OPERATIVA, MINUTO A MINUTO Y CHECKLIST */
+        .timeline-container {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 12px;
+        }
+
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            left: 6px;
+            top: 4px;
+            bottom: 4px;
+            width: 2px;
+            background: var(--brand-gold);
+            opacity: 0.6;
+        }
+
+        .timeline-step {
+            position: relative;
+            margin-bottom: 9px;
+        }
+
+        .timeline-step:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-node {
+            position: absolute;
+            left: -20px;
+            top: 2px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #0B0F17;
+            border: 2px solid var(--brand-gold);
+            color: var(--brand-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 7px;
+            font-weight: 800;
+        }
+
+        .timeline-content {
+            background: #F8FAFC;
+            border: 1px solid #E2E8F0;
+            border-radius: 6px;
+            padding: 6px 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .timeline-content.timeline-highlight {
+            border-left: 3px solid #166534;
+            background: #F0FDF4;
+        }
+
+        .timeline-content.timeline-highlight .timeline-time {
+            color: #166534;
+        }
+
+        .timeline-content.timeline-highlight .timeline-desc strong {
+            color: #166534;
+        }
+
+        .timeline-time {
+            font-size: 9px;
+            font-weight: 800;
+            color: var(--brand-primary);
+            background: #FFFFFF;
+            padding: 2px 6px;
+            border-radius: 4px;
+            border: 1px solid #CBD5E1;
+            white-space: nowrap;
+        }
+
+        .timeline-desc {
+            font-size: 9.5px;
+            color: #334155;
+            flex-grow: 1;
+            margin-left: 10px;
+        }
+
+        .timeline-desc strong {
+            color: var(--brand-primary);
+        }
+
+        /* DOS COLUMNAS EN PÁGINA 2 */
+        .two-cols {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .panel-box {
+            background: #FFFFFF;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 10px 12px;
+        }
+
+        .panel-box .section-title {
+            margin-bottom: 6px;
+            font-size: 11px;
+        }
+
+        .panel-desc {
+            font-size: 9px;
+            color: #475569;
+            line-height: 1.35;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 6px;
+            margin-bottom: 6px;
+            font-size: 9.5px;
+            color: #334155;
+            line-height: 1.35;
+        }
+
+        .checklist-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .check-icon {
+            color: #166534;
+            background: #DCFCE7;
+            border-radius: 50%;
+            width: 13px;
+            height: 13px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 1px;
+            font-size: 8px;
+            font-weight: 900;
+        }
+
+        .allergy-box {
+            background: #FEF2F2;
+            border: 1px dashed #FCA5A5;
+            border-radius: 6px;
+            padding: 8px 10px;
+            font-size: 9px;
+            color: #991B1B;
+            margin-top: 8px;
+        }
+
+        /* POLÍTICAS DE SERVICIO Y GARANTÍA */
+        .policy-callout {
+            background: var(--brand-gold-light);
+            border-left: 3px solid var(--brand-gold);
+            border-radius: 6px;
+            padding: 8px 12px;
+            margin-bottom: 12px;
+            font-size: 9px;
+            color: #451A03;
+            line-height: 1.45;
+        }
+
+        .policy-callout strong {
+            color: #78350F;
+        }
+
+        /* SECCIÓN DE FIRMA Y QR */
+        .auth-section {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 14px;
+            align-items: center;
+            background: #F8FAFC;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 12px 16px;
+            margin-top: auto;
+        }
+
+        .auth-chef {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .chef-signature-img {
+            font-family: 'Playfair Display', cursive;
+            font-size: 22px;
+            font-style: italic;
+            font-weight: 700;
+            color: #0B0F17;
+            border-bottom: 1.5px solid var(--brand-gold);
+            padding-bottom: 2px;
+            display: inline-block;
+        }
+
+        .chef-details h4 {
+            font-size: 11px;
+            font-weight: 800;
+            color: var(--brand-primary);
+            margin-top: 4px;
+        }
+
+        .chef-details p {
+            font-size: 8.5px;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .chef-details .chef-web {
+            color: #64748B;
+            font-size: 8px;
+        }
+
+        .qr-connect-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #FFFFFF;
+            border: 1px solid var(--border-color);
+            padding: 6px 8px;
+            border-radius: 8px;
+        }
+
+        .qr-img {
+            width: 46px;
+            height: 46px;
+            object-fit: contain;
+            border-radius: 4px;
+        }
+
+        .qr-text {
+            font-size: 8px;
+            color: #475569;
+            line-height: 1.25;
+        }
+
+        .qr-text strong {
+            color: var(--brand-primary);
+            display: block;
+            font-size: 8.5px;
+        }
+
+        /* Modal para Formulario Rápido */
+        #dataModal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.7);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal-card {
+            background: #FFFFFF;
+            width: 100%;
+            max-width: 600px;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            font-weight: 800;
+            color: #0B0F17;
+            margin-bottom: 4px;
+        }
+
+        .modal-sub {
+            font-size: 11px;
+            color: #64748B;
+            margin-bottom: 16px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 10px;
+            font-weight: 700;
+            color: #334155;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 8px 10px;
+            border: 1px solid #CBD5E1;
+            border-radius: 6px;
+            font-size: 12px;
+            color: #0F172A;
+            box-sizing: border-box;
+        }
+
+        .form-group.full {
+            grid-column: span 2;
+        }
+
+        .modal-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            border-top: 1px solid #CBD5E1;
+            padding-top: 14px;
+        }
+
+        .btn-cancel {
+            color: #475569;
+            border-color: #CBD5E1;
+        }
+
+        .btn-cancel:hover {
+            background: #F1F5F9;
+            color: #0F172A;
+            border-color: #94A3B8;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- BARRA SUPERIOR FLOTANTE DE CONTROL (NO SE IMPRIME) -->
+    <header class="top-toolbar">
+        <div class="toolbar-info">
+            <span class="toolbar-title">✨ Gestión de Constancia & Protocolo Post-Reserva</span>
+            <span class="toolbar-subtitle">| Fernando Corzo Paellas</span>
+        </div>
+        <div class="toolbar-actions">
+            <button class="btn btn-outline" id="toggleEditBtn" onclick="toggleInlineEdit()">
+                <i data-lucide="edit-3" class="w-4 h-4"></i> Activar Edición Libre
+            </button>
+            <button class="btn btn-outline" onclick="openDataModal()">
+                <i data-lucide="sliders" class="w-4 h-4"></i> Rellenar con Formulario
+            </button>
+            <button class="btn btn-success" onclick="copyWhatsAppScript()">
+                <i data-lucide="message-circle" class="w-4 h-4"></i> Copiar Texto WhatsApp
+            </button>
+            <button class="btn btn-gold" onclick="window.print()">
+                <i data-lucide="printer" class="w-4 h-4"></i> Guardar como PDF / Imprimir
+            </button>
+        </div>
+    </header>
+
+    <!-- ======================================================= -->
+    <!-- PÁGINA 1: CONSTANCIA OFICIAL, MENÚ Y ESTADO FINANCIERO -->
+    <!-- ======================================================= -->
+    <div class="page" id="page1">
+        
+        <!-- HEADER OFICIAL MEMBRETADO -->
+        <header class="header-section">
+            <div class="brand-block">
+                <div class="brand-logo-frame">
+                    <img src="Logo 1.1.png" alt="Fernando Corzo Paellas" onerror="this.src='Logo 1.png'">
+                </div>
+                <div class="brand-titles">
+                    <h1>Fernando Corzo</h1>
+                    <div class="tagline">Paellas de Autor &bull; Show en Vivo &bull; Catering de Alta Gama</div>
+                    <div class="contact-line">
+                        <span><i data-lucide="phone" class="w-3 h-3 inline"></i> +51 994 092 336</span>
+                        <span><i data-lucide="globe" class="w-3 h-3 inline"></i> fernandocorzo.com</span>
+                        <span><i data-lucide="map-pin" class="w-3 h-3 inline"></i> Lima & Balnearios del Sur</span>
+                    </div>
+                </div>
+            </div>
+            <div class="status-badge-box">
+                <span class="status-pill"><i data-lucide="check-circle" class="w-3 h-3"></i> Fecha Bloqueada</span>
+                <div class="doc-code" id="valResCode" contenteditable="true">FC-RES-2026-084</div>
+                <div class="doc-date" id="valEmisionDate" contenteditable="true">Emitido: 13 de Marzo de 2026</div>
+            </div>
+        </header>
+
+        <!-- BANNER DE CONFIRMACIÓN -->
+        <div class="hero-banner">
+            <div class="hero-left">
+                <h2>Constancia de Reserva & Ficha Técnica de Evento</h2>
+                <p>Su fecha ha sido <strong>bloqueada en exclusividad</strong> en la agenda del Chef Fernando Corzo. Garantizamos un espectáculo gastronómico en vivo y puntualidad absoluta.</p>
+            </div>
+            <div class="hero-stamp">
+                <div class="stamp-lbl">Compromiso</div>
+                <div class="stamp-val">APLAUSOS GARANTIZADOS</div>
+            </div>
+        </div>
+
+        <!-- METADATOS DEL EVENTO -->
+        <div class="section-title">
+            <i data-lucide="calendar"></i> Datos Generales de la Reserva
+        </div>
+        <div class="meta-grid">
+            <div class="meta-card highlight">
+                <div class="meta-label"><i data-lucide="user" class="w-2.5 h-2.5"></i> Anfitrión / Cliente</div>
+                <div class="meta-value" id="valHostName" contenteditable="true">Familia De La Piedra Barúa</div>
+                <div class="meta-sub" id="valHostPhone" contenteditable="true">Tel: +51 987 654 321</div>
+            </div>
+            <div class="meta-card highlight">
+                <div class="meta-label"><i data-lucide="calendar-days" class="w-2.5 h-2.5"></i> Fecha del Evento</div>
+                <div class="meta-value" id="valEventDate" contenteditable="true">Sábado, 28 de Marzo de 2026</div>
+                <div class="meta-sub" id="valEventType" contenteditable="true">Motivo: Almuerzo de Cumpleaños Familiar</div>
+            </div>
+            <div class="meta-card highlight">
+                <div class="meta-label"><i data-lucide="map-pin" class="w-2.5 h-2.5"></i> Locación / Distrito</div>
+                <div class="meta-value" id="valEventLoc" contenteditable="true">Las Casuarinas, Surco, Lima</div>
+                <div class="meta-sub" id="valEventArea" contenteditable="true">Área: Terraza & Jardín posterior</div>
+            </div>
+            <div class="meta-card">
+                <div class="meta-label"><i data-lucide="clock" class="w-2.5 h-2.5"></i> Horario de Montaje</div>
+                <div class="meta-value" id="valTimeArrival" contenteditable="true">11:30 AM (Llegada puntual)</div>
+                <div class="meta-sub">Armado de paellera e insumos</div>
+            </div>
+            <div class="meta-card">
+                <div class="meta-label"><i data-lucide="flame" class="w-2.5 h-2.5"></i> Hora de Servicio</div>
+                <div class="meta-value" id="valTimeService" contenteditable="true">01:30 PM (Emplatado caliente)</div>
+                <div class="meta-sub">En su punto exacto de cocción</div>
+            </div>
+            <div class="meta-card">
+                <div class="meta-label"><i data-lucide="users" class="w-2.5 h-2.5"></i> Número de Comensales</div>
+                <div class="meta-value" id="valGuests" contenteditable="true">30 personas confirmadas</div>
+                <div class="meta-sub" id="valPaelleraSize" contenteditable="true">Paellera Española de 70 cm</div>
+            </div>
+        </div>
+
+        <!-- PROPUESTA GASTRONÓMICA CONTRATADA -->
+        <div class="section-title">
+            <i data-lucide="utensils"></i> Menú Seleccionado & Sellos de Valor Culinario
+        </div>
+        <div class="menu-spec-box">
+            <div class="menu-header-row">
+                <div class="dish-title" id="valMenuMain" contenteditable="true">🥘 Paella de Mariscos del Pacífico & Tapas Españolas</div>
+                <div class="dish-badge">Especialidad de Autor</div>
+            </div>
+            <div class="dish-description" id="valMenuDesc" contenteditable="true">
+                Cocinada en vivo frente a los invitados con langostinos jumbo enteros, calamares tiernos, pulpo seleccionado y conchas de abanico. Incluye tabla de degustación de <strong>Tapas Españolas clásicas</strong> y <strong>Piqueos de Champiñones al Ajillo</strong> para amenizar la espera del banquete.
+            </div>
+
+            <!-- 4 DETALLES DE VALOR ESPECÍFICOS DE LA MARCA -->
+            <div class="val-points-grid">
+                <div class="val-point">
+                    <div class="val-point-title"><i data-lucide="sparkles"></i> Azafrán Grado 1</div>
+                    <div class="val-point-desc">Hebra española pura importada. 100% natural, sin colorantes sintéticos.</div>
+                </div>
+                <div class="val-point">
+                    <div class="val-point-title"><i data-lucide="droplet"></i> Fumet Concentrado</div>
+                    <div class="val-point-desc">Caldo madre de mariscos y pescados de roca reducido durante 6 horas.</div>
+                </div>
+                <div class="val-point">
+                    <div class="val-point-title"><i data-lucide="shield-check"></i> El "Socarrat"</div>
+                    <div class="val-point-desc">Capa crujiente y caramelizada de arroz al fondo, sello de paella auténtica.</div>
+                </div>
+                <div class="val-point">
+                    <div class="val-point-title"><i data-lucide="chef-hat"></i> Show 100% en Vivo</div>
+                    <div class="val-point-desc">Interacción amena del Chef Fernando Corzo contando anécdotas y secretos.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ESTADO DE CUENTA Y REGISTRO DE PAGOS -->
+        <div class="section-title">
+            <i data-lucide="credit-card"></i> Estado Financiero & Liquidación Transparente
+        </div>
+        <div class="finance-card">
+            <table class="finance-table">
+                <thead>
+                    <tr>
+                        <th>Concepto Detallado</th>
+                        <th class="text-right">Cantidad</th>
+                        <th class="text-right">Monto Unitario</th>
+                        <th class="text-right">Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong id="valFinItem1" contenteditable="true">Show de Paella de Mariscos en Vivo + Montaje Integral</strong></td>
+                        <td class="text-right" id="valFinQty1" contenteditable="true">30 pax</td>
+                        <td class="text-right" id="valFinPrice1" contenteditable="true">S/. 65.00</td>
+                        <td class="text-right amount-bold" id="valFinSub1" contenteditable="true">S/. 1,950.00</td>
+                    </tr>
+                    <tr>
+                        <td><strong id="valFinItem2" contenteditable="true">Ronda de Entradas: Tapas Españolas & Champiñones al Ajillo</strong></td>
+                        <td class="text-right" id="valFinQty2" contenteditable="true">30 porc.</td>
+                        <td class="text-right" id="valFinPrice2" contenteditable="true">S/. 15.00</td>
+                        <td class="text-right amount-bold" id="valFinSub2" contenteditable="true">S/. 450.00</td>
+                    </tr>
+                    <tr class="finance-row-total">
+                        <td colspan="3" class="text-right"><strong>Inversión Total del Evento:</strong></td>
+                        <td class="text-right amount-bold total-amount" id="valFinTotal" contenteditable="true">S/. 2,400.00</td>
+                    </tr>
+                    <tr class="finance-row-paid">
+                        <td colspan="2"><span class="paid-tag"><i data-lucide="check" class="w-2.5 h-2.5 inline"></i> ABONO RECIBIDO (50% SEPARACIÓN)</span> <span class="ref-text" id="valFinAbonoRef" contenteditable="true">(Transf. BCP Ref: 849301)</span></td>
+                        <td class="text-right status-label">Abonado:</td>
+                        <td class="text-right amount-bold status-amount" id="valFinAbono" contenteditable="true">S/. 1,200.00</td>
+                    </tr>
+                    <tr class="finance-row-pending">
+                        <td colspan="2"><span class="pending-tag">SALDO PENDIENTE (50% LIQUIDACIÓN)</span> <span class="ref-text">A cancelar al concluir el servicio</span></td>
+                        <td class="text-right status-label">Por Cancelar:</td>
+                        <td class="text-right amount-bold status-amount" id="valFinSaldo" contenteditable="true">S/. 1,200.00</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="payment-methods-box">
+                <span><strong>Canales de Pago para Saldo:</strong> BCP, BBVA, Interbank, Yape y Plin directo del Chef Fernando Corzo.</span>
+                <div class="payment-pills-wrap">
+                    <span class="payment-pill">Yape / Plin: 994 092 336</span>
+                    <span class="payment-pill">BCP Ahorros Soles</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- FOOTER PÁGINA 1 -->
+        <footer class="page-footer">
+            <div>Constancia Oficial emitida por <span class="brand-ref">Fernando Corzo Paellas y Más</span> &bull; RUC: 10078945612</div>
+            <div>Página 1 de 2</div>
+        </footer>
+    </div>
+
+    <!-- ======================================================= -->
+    <!-- PÁGINA 2: CRONOGRAMA MINUTO A MINUTO, CHECKLIST Y FIRMA -->
+    <!-- ======================================================= -->
+    <div class="page" id="page2">
+        
+        <!-- MINI HEADER PÁGINA 2 -->
+        <header class="header-section header-sub">
+            <div class="brand-titles">
+                <h1>Ficha Técnica & Protocolo Operativo del Día del Evento</h1>
+                <div class="tagline">Coordinación Logística &bull; Sincronización &bull; Estándares de Servicio</div>
+            </div>
+            <div class="status-badge-box">
+                <div class="doc-code">Ref: FC-RES-2026-084</div>
+            </div>
+        </header>
+
+        <!-- CRONOGRAMA MINUTO A MINUTO -->
+        <div class="section-title">
+            <i data-lucide="clock-9"></i> Cronograma Oficial "Minuto a Minuto" (Timing del Show)
+        </div>
+        <div class="timeline-container">
+            <div class="timeline-step">
+                <div class="timeline-node">1</div>
+                <div class="timeline-content">
+                    <div class="timeline-time" id="tTime1" contenteditable="true">11:30 AM (T - 120 min)</div>
+                    <div class="timeline-desc" id="tDesc1" contenteditable="true"><strong>Arribo del Chef y Equipo:</strong> Descarga y armado de cocina móvil, quemadores homologados, paellera gigante y mesa de mise en place.</div>
+                </div>
+            </div>
+            <div class="timeline-step">
+                <div class="timeline-node">2</div>
+                <div class="timeline-content">
+                    <div class="timeline-time" id="tTime2" contenteditable="true">12:15 PM (T - 75 min)</div>
+                    <div class="timeline-desc" id="tDesc2" contenteditable="true"><strong>Encendido del Fuego & Sofrito:</strong> El aroma atrae a los invitados. Sellado de mariscos nobles y vegetales frescos en aceite de oliva extravirgen.</div>
+                </div>
+            </div>
+            <div class="timeline-step">
+                <div class="timeline-node">3</div>
+                <div class="timeline-content">
+                    <div class="timeline-time" id="tTime3" contenteditable="true">12:30 PM (T - 60 min)</div>
+                    <div class="timeline-desc" id="tDesc3" contenteditable="true"><strong>Servicio de Entradas / Tapas:</strong> Se reparten los piqueos o tapas para acompañar los cócteles mientras contemplan el show culinario.</div>
+                </div>
+            </div>
+            <div class="timeline-step">
+                <div class="timeline-node">4</div>
+                <div class="timeline-content">
+                    <div class="timeline-time" id="tTime4" contenteditable="true">12:55 PM (T - 35 min)</div>
+                    <div class="timeline-desc" id="tDesc4" contenteditable="true"><strong>Entrada del Arroz, Fumet & Azafrán:</strong> Ebullición majestuosa. El chef explica a los anfitriones el punto de cocción y reposo.</div>
+                </div>
+            </div>
+            <div class="timeline-step">
+                <div class="timeline-node">5</div>
+                <div class="timeline-content">
+                    <div class="timeline-time" id="tTime5" contenteditable="true">01:20 PM (T - 10 min)</div>
+                    <div class="timeline-desc" id="tDesc5" contenteditable="true"><strong>El Socarrat & Reposo Sagrado:</strong> Fuego vivo final para caramelizar la costra inferior y reposo de 5 minutos tapado con paño noble.</div>
+                </div>
+            </div>
+            <div class="timeline-step">
+                <div class="timeline-node">6</div>
+                <div class="timeline-content timeline-highlight">
+                    <div class="timeline-time" id="tTime6" contenteditable="true">01:30 PM (Hora Cero)</div>
+                    <div class="timeline-desc" id="tDesc6" contenteditable="true"><strong>Servicio de Paella Humeante:</strong> Emplatado al instante servido generosamente comensal por comensal. ¡Aplausos garantizados!</div>
+                </div>
+            </div>
+            <div class="timeline-step">
+                <div class="timeline-node">7</div>
+                <div class="timeline-content">
+                    <div class="timeline-time" id="tTime7" contenteditable="true">02:45 PM (Post-Show)</div>
+                    <div class="timeline-desc" id="tDesc7" contenteditable="true"><strong>Limpieza Impecable & Retiro:</strong> Desarmado de equipos, recojo de residuos y entrega del área totalmente aseada y ordenada.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DOS PANELES: CHECKLIST DEL ANFITRIÓN Y ALÉRGENOS -->
+        <div class="two-cols">
+            <div class="panel-box">
+                <div class="section-title">
+                    <i data-lucide="clipboard-check"></i> Checklist para el Anfitrión (El Día D)
+                </div>
+                <div class="checklist-item">
+                    <span class="check-icon">&#10003;</span>
+                    <div><strong>Área Ventilada:</strong> Espacio libre de 2x2 metros en terraza, jardín o patio con buena ventilación.</div>
+                </div>
+                <div class="checklist-item">
+                    <span class="check-icon">&#10003;</span>
+                    <div><strong>Mesa de Apoyo:</strong> 1 mesa pequeña o mesón donde el chef pueda disponer el mise en place.</div>
+                </div>
+                <div class="checklist-item">
+                    <span class="check-icon">&#10003;</span>
+                    <div><strong>Acceso a Agua:</strong> Punto cercano para lavado inicial y aseo de insumos.</div>
+                </div>
+                <div class="checklist-item">
+                    <span class="check-icon">&#10003;</span>
+                    <div><strong>Vajilla & Cubiertos:</strong> Platos y tenedores listos para servir (o confirmación de menaje biodegradable).</div>
+                </div>
+            </div>
+
+            <div class="panel-box">
+                <div class="section-title">
+                    <i data-lucide="alert-triangle"></i> Salud & Preferencias Especiales
+                </div>
+                <p class="panel-desc">
+                    Para garantizar la seguridad de todos los comensales, por favor notifíquenos con anticipación si algún invitado tiene requerimientos alimentarios especiales:
+                </p>
+                <div class="allergy-box" id="valAllergies" contenteditable="true">
+                    <strong>Alérgenos registrados para este evento:</strong><br>
+                    &bull; 2 Comensales con intolerancia estricta a moluscos (se les reservará porción adaptada con lomo fino/pollo).<br>
+                    &bull; Resto de invitados sin restricciones médicas reportadas.
+                </div>
+            </div>
+        </div>
+
+        <!-- POLÍTICAS DE SERVICIO Y GARANTÍA -->
+        <div class="policy-callout">
+            <strong>Términos & Políticas de Servicio Fernando Corzo:</strong><br>
+            <strong>1. Conteo de Invitados:</strong> Podrá incrementar el número de comensales hasta 48 horas antes del evento.<br>
+            <strong>2. Reprogramación:</strong> En caso de fuerza mayor o clima adverso, podrá reprogramar su fecha con al menos 7 días de antelación sin penalidad, sujeto a disponibilidad en el calendario.<br>
+            <strong>3. Compromiso "Cocina Impecable":</strong> Todo nuestro equipo deja su terraza o jardín tal y como lo encontramos.<br>
+            <strong>4. Garantía de Aplausos:</strong> Si el sabor, punto del arroz o la experiencia no cumplen con sus expectativas, el Chef Fernando Corzo responderá personalmente.
+        </div>
+
+        <!-- SECCIÓN DE FIRMA Y QR -->
+        <div class="auth-section">
+            <div class="auth-chef">
+                <div>
+                    <div class="chef-signature-img">Fernando Corzo C.</div>
+                    <div class="chef-details">
+                        <h4>Chef Fernando Corzo Chasseloup</h4>
+                        <p>Chef Ejecutivo &bull; Director de Operaciones Culinarias</p>
+                        <p class="chef-web">fernandocorzo.com &bull; Lima, Perú</p>
+                    </div>
+                </div>
+            </div>
+            <div class="qr-connect-box">
+                <img src="qr_fernandocorzo.png" alt="QR Fernando Corzo" class="qr-img">
+                <div class="qr-text">
+                    <strong>Contacto Directo</strong>
+                    Escanee para guardar la tarjeta digital vCard y WhatsApp del Chef.
+                </div>
+            </div>
+        </div>
+
+        <!-- FOOTER PÁGINA 2 -->
+        <footer class="page-footer">
+            <div>Documento Técnico de Servicio &bull; Desarrollado por Consulting José Corzo &bull; Soluciones Digitales Gastronómicas</div>
+            <div>Página 2 de 2</div>
+        </footer>
+    </div>
+
+    <!-- ======================================================= -->
+    <!-- MODAL DE EDICIÓN RÁPIDA DE DATOS DEL CLIENTE            -->
+    <!-- ======================================================= -->
+    <div id="dataModal">
+        <div class="modal-card">
+            <h3 class="modal-title">Rellenar Ficha con Datos del Cliente</h3>
+            <p class="modal-sub">Complete los campos y haga clic en "Aplicar a la Ficha". Los cambios se reflejarán de inmediato para imprimir o guardar en PDF.</p>
+            
+            <form id="clientForm" onsubmit="applyFormData(event)">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Código de Reserva</label>
+                        <input type="text" id="mCode" value="FC-RES-2026-084" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Fecha del Evento</label>
+                        <input type="text" id="mDate" value="Sábado, 28 de Marzo de 2026" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Nombre del Anfitrión</label>
+                        <input type="text" id="mHost" value="Familia De La Piedra Barúa" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Teléfono / Celular</label>
+                        <input type="text" id="mPhone" value="+51 987 654 321" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Distrito / Ubicación</label>
+                        <input type="text" id="mLoc" value="Las Casuarinas, Surco, Lima" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Nº de Comensales</label>
+                        <input type="text" id="mGuests" value="30 personas confirmadas" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Hora de Llegada (Montaje)</label>
+                        <input type="text" id="mArrival" value="11:30 AM (Llegada puntual)" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Hora de Comida (Servicio)</label>
+                        <input type="text" id="mService" value="01:30 PM (Emplatado caliente)" required>
+                    </div>
+                    <div class="form-group full">
+                        <label>Menú Seleccionado</label>
+                        <input type="text" id="mMenu" value="🥘 Paella de Mariscos del Pacífico & Tapas Españolas" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Total del Servicio (S/.)</label>
+                        <input type="text" id="mTotal" value="S/. 2,400.00" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Adelanto 50% Abonado (S/.)</label>
+                        <input type="text" id="mAbono" value="S/. 1,200.00" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Saldo Pendiente (S/.)</label>
+                        <input type="text" id="mSaldo" value="S/. 1,200.00" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Referencia de Pago del Abono</label>
+                        <input type="text" id="mRef" value="(Transf. BCP Ref: 849301)" required>
+                    </div>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-outline btn-cancel" onclick="closeDataModal()">Cancelar</button>
+                    <button type="submit" class="btn btn-gold">Aplicar a la Ficha</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- SCRIPTS DE INTERACCIÓN -->
+    <script>
+        lucide.createIcons();
+
+        let isEditing = false;
+        function toggleInlineEdit() {
+            isEditing = !isEditing;
+            const editables = document.querySelectorAll('[contenteditable]');
+            const btn = document.getElementById('toggleEditBtn');
+
+            editables.forEach(el => {
+                if (isEditing) {
+                    el.classList.add('editable-active');
+                    el.style.backgroundColor = 'rgba(197, 160, 89, 0.1)';
+                    el.style.outline = '1.5px dashed #C5A059';
+                } else {
+                    el.classList.remove('editable-active');
+                    el.style.backgroundColor = 'transparent';
+                    el.style.outline = 'none';
+                }
+            });
+
+            if (isEditing) {
+                btn.innerHTML = '<i data-lucide="check" class="w-4 h-4"></i> Bloquear Edición';
+                btn.classList.add('btn-gold');
+                btn.classList.remove('btn-outline');
+            } else {
+                btn.innerHTML = '<i data-lucide="edit-3" class="w-4 h-4"></i> Activar Edición Libre';
+                btn.classList.remove('btn-gold');
+                btn.classList.add('btn-outline');
+            }
+            lucide.createIcons();
+        }
+
+        function openDataModal() {
+            document.getElementById('dataModal').style.display = 'flex';
+        }
+
+        function closeDataModal() {
+            document.getElementById('dataModal').style.display = 'none';
+        }
+
+        function applyFormData(e) {
+            e.preventDefault();
+            document.getElementById('valResCode').innerText = document.getElementById('mCode').value;
+            document.getElementById('valEventDate').innerText = document.getElementById('mDate').value;
+            document.getElementById('valHostName').innerText = document.getElementById('mHost').value;
+            document.getElementById('valHostPhone').innerText = 'Tel: ' + document.getElementById('mPhone').value;
+            document.getElementById('valEventLoc').innerText = document.getElementById('mLoc').value;
+            document.getElementById('valGuests').innerText = document.getElementById('mGuests').value;
+            document.getElementById('valTimeArrival').innerText = document.getElementById('mArrival').value;
+            document.getElementById('valTimeService').innerText = document.getElementById('mService').value;
+            document.getElementById('valMenuMain').innerText = document.getElementById('mMenu').value;
+            document.getElementById('valFinTotal').innerText = document.getElementById('mTotal').value;
+            document.getElementById('valFinAbono').innerText = document.getElementById('mAbono').value;
+            document.getElementById('valFinSaldo').innerText = document.getElementById('mSaldo').value;
+            document.getElementById('valFinAbonoRef').innerText = document.getElementById('mRef').value;
+            
+            closeDataModal();
+            alert('¡Ficha actualizada exitosamente! Ya puede imprimirla o guardarla en PDF.');
+        }
+
+        function copyWhatsAppScript() {
+            const host = document.getElementById('valHostName').innerText.trim();
+            const date = document.getElementById('valEventDate').innerText.trim();
+            const guests = document.getElementById('valGuests').innerText.trim();
+            const menu = document.getElementById('valMenuMain').innerText.trim();
+            const arrival = document.getElementById('valTimeArrival').innerText.trim();
+            const service = document.getElementById('valTimeService').innerText.trim();
+            const code = document.getElementById('valResCode').innerText.trim();
+            const saldo = document.getElementById('valFinSaldo').innerText.trim();
+
+            const text = `*¡Felicitaciones, ${host}!* 🎉🥘\n\n` +
+                `Hemos recibido su abono con éxito. Su fecha para el *${date}* queda oficialmente *RESERVADA Y BLOQUEADA EN EXCLUSIVA* en la agenda del Chef Fernando Corzo.\n\n` +
+                `📋 *Resumen Oficial de su Evento (${code}):*\n` +
+                `• 👥 *Comensales:* ${guests}\n` +
+                `• 🥘 *Especialidad:* ${menu}\n` +
+                `• ⏰ *Llegada & Montaje del Chef:* ${arrival}\n` +
+                `• 🍽️ *Hora Estimada de Almuerzo:* ${service}\n` +
+                `• 💰 *Saldo Pendiente a la entrega:* ${saldo}\n\n` +
+                `📄 *Adjunto le enviamos su Constancia de Reserva & Ficha Técnica PDF* con el desglose completo, el cronograma minuto a minuto del show y los requerimientos del espacio.\n\n` +
+                `⚠️ *Nota importante de salud:* Si entre sus invitados hay personas con alergias severas a mariscos o celíacos, por favor confírmenos para preparar una atención especial adaptada.\n\n` +
+                `¡Nosotros nos encargamos de toda la cocina para que usted disfrute como un invitado de honor!\n\n` +
+                `_Chef Fernando Corzo · Paellas de Autor & Show en Vivo_\n` +
+                `🌐 fernandocorzo.com`;
+
+            navigator.clipboard.writeText(text).then(() => {
+                alert('✅ ¡Texto oficial de WhatsApp copiado al portapapeles!\n\nYa puede abrir la conversación con el cliente y pegarlo junto al PDF generado.');
+            }).catch(err => {
+                console.error('Error al copiar:', err);
+                prompt('Copie manualmente el siguiente texto para WhatsApp:', text);
+            });
+        }
+    </script>
+</body>
+</html>
