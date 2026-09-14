@@ -505,14 +505,16 @@
                     <span class="font-sans text-[10px] md:text-xs font-bold tracking-[0.2em] text-brand-gold uppercase">Show en Vivo Hoy</span>
                 </div>
                 
-                <!-- Dual Target Badges (B2C & B2B) with 3D Bevels -->
+                <!-- Dual Target Interactive Badges (B2C & B2B) with 3D Bevels & Smooth Navigation -->
                 <div class="flex flex-wrap items-center gap-2 pt-1">
-                    <span class="inline-flex items-center gap-1.5 bevel-3d-gold text-amber-300 text-xs font-semibold px-3.5 py-1.5 rounded-full">
-                        <i data-lucide="users" class="w-3.5 h-3.5 text-brand-gold"></i> Celebraciones Familiares &amp; Sociales
-                    </span>
-                    <span class="inline-flex items-center gap-1.5 bevel-3d-red text-white text-xs font-semibold px-3.5 py-1.5 rounded-full">
-                        <i data-lucide="building-2" class="w-3.5 h-3.5 text-amber-200"></i> Catering Corporativo &amp; Empresas
-                    </span>
+                    <a href="#eventos" id="badgeHeroFamiliares" title="Ver Show para Celebraciones Familiares y Sociales" class="inline-flex items-center gap-1.5 bevel-3d-gold text-amber-300 hover:text-white text-xs font-semibold px-3.5 py-1.5 rounded-full active:scale-95 transition-all cursor-pointer touch-manipulation group shadow-sm">
+                        <i data-lucide="users" class="w-3.5 h-3.5 text-brand-gold group-hover:scale-110 transition-transform pointer-events-none"></i>
+                        <span class="pointer-events-none">Celebraciones Familiares &amp; Sociales</span>
+                    </a>
+                    <a href="#empresas" id="badgeHeroEmpresas" title="Ver Catering Corporativo y Soluciones para Empresas" class="inline-flex items-center gap-1.5 bevel-3d-red text-white hover:brightness-110 text-xs font-semibold px-3.5 py-1.5 rounded-full active:scale-95 transition-all cursor-pointer touch-manipulation group shadow-sm">
+                        <i data-lucide="building-2" class="w-3.5 h-3.5 text-amber-200 group-hover:scale-110 transition-transform pointer-events-none"></i>
+                        <span class="pointer-events-none">Catering Corporativo &amp; Empresas</span>
+                    </a>
                 </div>
                 
                 <h1 class="font-serif text-[38px] leading-[1.08] sm:text-5xl md:text-7xl lg:text-8xl font-bold text-white tracking-tight drop-shadow-lg">
@@ -1249,7 +1251,7 @@
                         Atendemos directorios en San Isidro y Miraflores, agasajos en plantas industriales, casas de playa corporativas y jornadas de integración.
                     </p>
                 </div>
-                <a href="#cotizar" class="bevel-3d-gold text-amber-300 hover:text-white px-8 py-3.5 rounded-full font-bold text-sm transition-all shadow-lg whitespace-nowrap inline-flex items-center gap-2">
+                <a href="#cotizar" onclick="const b = document.getElementById('toggleB2B'); if(b) b.click();" class="bevel-3d-gold text-amber-300 hover:text-white px-8 py-3.5 rounded-full font-bold text-sm transition-all shadow-lg whitespace-nowrap inline-flex items-center gap-2">
                     <i data-lucide="file-text" class="w-4 h-4 text-brand-gold"></i> Cotizar para mi Empresa
                 </a>
             </div>
@@ -2003,6 +2005,28 @@
                 if(b2bExtraFields) {
                     b2bExtraFields.classList.remove('hidden');
                     if(window.lucide) lucide.createIcons();
+                }
+            });
+        }
+
+        // Hero Pill Badges Smooth Navigation
+        const badgeHeroFamiliares = document.getElementById('badgeHeroFamiliares');
+        const badgeHeroEmpresas = document.getElementById('badgeHeroEmpresas');
+        if(badgeHeroFamiliares) {
+            badgeHeroFamiliares.addEventListener('click', (e) => {
+                const target = document.getElementById('eventos');
+                if(target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        }
+        if(badgeHeroEmpresas) {
+            badgeHeroEmpresas.addEventListener('click', (e) => {
+                const target = document.getElementById('empresas');
+                if(target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth' });
                 }
             });
         }
