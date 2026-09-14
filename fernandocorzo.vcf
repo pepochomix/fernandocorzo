@@ -1,16 +1,18 @@
 BEGIN:VCARD
 VERSION:3.0
-FN:Chef Fernando Corzo | Paellas de Autor & Catering
-N:Corzo;Fernando;;;
+PRODID:-//Chef Fernando Corzo//Contacto Oficial//ES
+N:Corzo;Fernando;;Chef;
+FN:Chef Fernando Corzo
 ORG:Fernando Corzo · Paellas de Autor & Show en Vivo
-TITLE:Chef Ejecutivo & Director de Catering
-TEL;TYPE=CELL,VOICE,PREF:+51994092336
-TEL;TYPE=WORK,VOICE:+51994092336
-EMAIL;TYPE=INTERNET,PREF:fernandocorzo12@gmail.com
-URL;TYPE=WORK,PREF:https://fernandocorzo.vercel.app
+TITLE:Chef Ejecutivo & Director Gastronómico
+TEL;TYPE=CELL:+51994092336
+TEL;TYPE=WORK:+51994092336
+EMAIL;TYPE=INTERNET:fernandocorzo12@gmail.com
+EMAIL;TYPE=HOME:fernandocorzo12@gmail.com
+URL;TYPE=WORK:https://fernandocorzo.vercel.app
 X-SOCIALPROFILE;TYPE=instagram:https://www.instagram.com/fernandocorzochasseloup/
 X-SOCIALPROFILE;TYPE=facebook:https://www.facebook.com/profile.php?id=100057442428185
-ADR;TYPE=WORK:;;Miraflores, San Isidro, Surco, La Molina, Sur Chico;Lima;Lima;15074;Perú
+ADR;TYPE=WORK:;;Miraflores\, San Isidro\, Surco\, La Molina\, Balnearios del Sur;Lima;Lima;15074;Perú
 GEO:-12.1215;-77.0298
-NOTE:Chef Fernando Corzo - Catering de Paellas y Cocina Marina en Lima Metropolitana y Balnearios del Sur Chico. Teléfono / WhatsApp: +51 994 092 336 | Correo: fernandocorzo12@gmail.com | Web: https://fernandocorzo.vercel.app
+NOTE:Chef Fernando Corzo - Catering de Paellas y Cocina Marina en Vivo en Lima y Balnearios del Sur. WhatsApp: +51 994 092 336 | Correo: fernandocorzo12@gmail.com | Web: https://fernandocorzo.vercel.app
 END:VCARD

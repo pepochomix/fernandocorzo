@@ -4,6 +4,23 @@
   "trailingSlash": false,
   "headers": [
     {
+      "source": "/fernandocorzo.vcf",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/vcard; charset=utf-8"
+        },
+        {
+          "key": "Content-Disposition",
+          "value": "inline; filename=\"Chef_Fernando_Corzo.vcf\""
+        },
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, no-store, must-revalidate"
+        }
+      ]
+    },
+    {
       "source": "/(.*).(mp4|mp3|png|jpg|jpeg|webp|svg|ico)",
       "headers": [
         {
