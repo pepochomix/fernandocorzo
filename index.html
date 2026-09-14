@@ -461,8 +461,8 @@
                     </a>
                 </div>
 
-                <!-- Cotizar Primary CTA Button with 3D Red Bevel and Shimmer -->
-                <a href="#cotizar" class="bevel-3d-red shimmer-sweep text-white px-3 sm:px-5 py-1.5 sm:py-2 rounded-full font-bold text-[11px] sm:text-xs uppercase tracking-wider flex items-center gap-1 sm:gap-2 shadow-lg cursor-pointer whitespace-nowrap">
+                <!-- Cotizar Primary CTA Button with 3D Red Bevel and Shimmer (Desktop/Tablet only; on mobile primary CTA is in sticky bottom bar) -->
+                <a href="#cotizar" class="bevel-3d-red shimmer-sweep text-white px-3 sm:px-5 py-1.5 sm:py-2 rounded-full font-bold text-[11px] sm:text-xs uppercase tracking-wider hidden sm:inline-flex items-center gap-1 sm:gap-2 shadow-lg cursor-pointer whitespace-nowrap">
                     <i data-lucide="phone" class="w-3 h-3 sm:w-3.5 sm:h-3.5"></i>
                     <span>Cotizar</span>
                 </a>
@@ -2070,9 +2070,9 @@
         });
     </script>
     <!-- Modal Interactivo Tarjeta Digital NFC & Código QR (Mobile & Desktop) -->
-    <div id="nfcModal" class="fixed inset-0 z-[200] hidden items-center justify-center p-4 bg-black/85 backdrop-blur-md transition-opacity duration-300">
+    <div id="nfcModal" class="fixed inset-0 z-[300] hidden items-center justify-center p-4 bg-black/85 backdrop-blur-md transition-opacity duration-300">
         <div class="relative w-full max-w-md bg-brand-dark/95 border-2 border-brand-gold/40 rounded-3xl p-6 sm:p-8 text-center shadow-[0_0_60px_rgba(251,192,45,0.25)] laser-bevel animate-fadeIn">
-            <button id="closeNfcBtn" type="button" title="Cerrar modal" aria-label="Cerrar modal" class="absolute top-4 right-4 text-gray-400 hover:text-white p-2 rounded-full hover:bg-white/10 transition-colors cursor-pointer">
+            <button id="closeNfcBtn" type="button" onclick="window.hideNfcModal && window.hideNfcModal();" title="Cerrar modal" aria-label="Cerrar modal" class="absolute top-4 right-4 text-gray-400 hover:text-white p-2 rounded-full hover:bg-white/10 transition-colors cursor-pointer">
                 <i data-lucide="x" class="w-6 h-6"></i>
             </button>
             <div class="inline-flex items-center gap-2 bg-brand-red/20 border border-brand-red/40 text-brand-gold px-3.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-3">
@@ -2115,7 +2115,7 @@
                 </div>
             </div>
             <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-[11px] text-gray-400">
-                <a href="#tarjeta-digital" id="linkGoToSectionFromModal" class="text-brand-gold hover:underline flex items-center gap-1">
+                <a href="#tarjeta-digital" id="linkGoToSectionFromModal" onclick="window.hideNfcModal && window.hideNfcModal();" class="text-brand-gold hover:underline flex items-center gap-1">
                     <span>Ver sección completa</span> &darr;
                 </a>
                 <span class="text-gray-500">fernandocorzo.vercel.app</span>
@@ -2124,9 +2124,9 @@
     </div>
 
     <!-- Modal Redes Sociales Oficiales (Mobile & Desktop) -->
-    <div id="socialsModal" class="fixed inset-0 z-[200] hidden items-center justify-center p-4 bg-black/85 backdrop-blur-md transition-opacity duration-300">
+    <div id="socialsModal" class="fixed inset-0 z-[300] hidden items-center justify-center p-4 bg-black/85 backdrop-blur-md transition-opacity duration-300">
         <div class="relative w-full max-w-sm bg-brand-dark/95 border-2 border-pink-500/40 rounded-3xl p-6 text-center shadow-[0_0_60px_rgba(236,72,153,0.25)] laser-bevel animate-fadeIn">
-            <button id="closeSocialsBtn" type="button" title="Cerrar redes sociales" aria-label="Cerrar redes sociales" class="absolute top-4 right-4 text-gray-400 hover:text-white p-2 rounded-full hover:bg-white/10 transition-colors cursor-pointer">
+            <button id="closeSocialsBtn" type="button" onclick="window.hideSocialsModal && window.hideSocialsModal();" title="Cerrar redes sociales" aria-label="Cerrar redes sociales" class="absolute top-4 right-4 text-gray-400 hover:text-white p-2 rounded-full hover:bg-white/10 transition-colors cursor-pointer">
                 <i data-lucide="x" class="w-5 h-5"></i>
             </button>
             <div class="inline-flex items-center gap-2 bg-pink-500/10 border border-pink-500/30 text-pink-300 px-3.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-3">
@@ -2163,13 +2163,68 @@
                 </a>
             </div>
             <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs text-gray-400">
-                <button type="button" id="btnSwitchToQrModal" class="text-brand-gold hover:underline flex items-center gap-1 cursor-pointer">
+                <button type="button" id="btnSwitchToQrModal" onclick="window.showNfcModal && window.showNfcModal(); return false;" class="text-brand-gold hover:underline flex items-center gap-1 cursor-pointer">
                     <i data-lucide="qr-code" class="w-3.5 h-3.5"></i> Ver Tarjeta QR
                 </button>
                 <a href="https://fernandocorzo.vercel.app" class="hover:text-white">fernandocorzo.vercel.app</a>
             </div>
         </div>
     </div>
+
+    <!-- Early Global Controllers for Modals (Mobile-First Touch Architecture) -->
+    <script>
+        window.showNfcModal = function(e) {
+            if(e && e.preventDefault) e.preventDefault();
+            const nfc = document.getElementById('nfcModal');
+            const soc = document.getElementById('socialsModal');
+            if(soc) {
+                soc.classList.add('hidden');
+                soc.classList.remove('flex');
+                soc.style.display = 'none';
+            }
+            if(nfc) {
+                nfc.classList.remove('hidden');
+                nfc.classList.add('flex');
+                nfc.style.display = 'flex';
+                if(window.lucide) lucide.createIcons();
+            }
+        };
+
+        window.hideNfcModal = function() {
+            const nfc = document.getElementById('nfcModal');
+            if(nfc) {
+                nfc.classList.add('hidden');
+                nfc.classList.remove('flex');
+                nfc.style.display = 'none';
+            }
+        };
+
+        window.showSocialsModal = function(e) {
+            if(e && e.preventDefault) e.preventDefault();
+            const nfc = document.getElementById('nfcModal');
+            const soc = document.getElementById('socialsModal');
+            if(nfc) {
+                nfc.classList.add('hidden');
+                nfc.classList.remove('flex');
+                nfc.style.display = 'none';
+            }
+            if(soc) {
+                soc.classList.remove('hidden');
+                soc.classList.add('flex');
+                soc.style.display = 'flex';
+                if(window.lucide) lucide.createIcons();
+            }
+        };
+
+        window.hideSocialsModal = function() {
+            const soc = document.getElementById('socialsModal');
+            if(soc) {
+                soc.classList.add('hidden');
+                soc.classList.remove('flex');
+                soc.style.display = 'none';
+            }
+        };
+    </script>
 
     <!-- Modal Planificador de Calendario para Eventos (Mobile Android & Small Height Responsive) -->
     <div id="calendarModal" class="fixed inset-0 z-[250] hidden overflow-y-auto bg-black/85 backdrop-blur-md transition-opacity duration-300 p-2 sm:p-4">
@@ -2283,39 +2338,17 @@
         const btnSwitchToQrModal = document.getElementById('btnSwitchToQrModal');
         const linkGoToSectionFromModal = document.getElementById('linkGoToSectionFromModal');
 
-        function showNfcModal() {
-            if(socialsModal) {
-                socialsModal.classList.add('hidden');
-                socialsModal.classList.remove('flex');
-            }
-            if(nfcModal) {
-                nfcModal.classList.remove('hidden');
-                nfcModal.classList.add('flex');
-                if(window.lucide) lucide.createIcons();
-            }
+        function showNfcModal(e) {
+            window.showNfcModal(e);
         }
         function hideNfcModal() {
-            if(nfcModal) {
-                nfcModal.classList.add('hidden');
-                nfcModal.classList.remove('flex');
-            }
+            window.hideNfcModal();
         }
-        function showSocialsModal() {
-            if(nfcModal) {
-                nfcModal.classList.add('hidden');
-                nfcModal.classList.remove('flex');
-            }
-            if(socialsModal) {
-                socialsModal.classList.remove('hidden');
-                socialsModal.classList.add('flex');
-                if(window.lucide) lucide.createIcons();
-            }
+        function showSocialsModal(e) {
+            window.showSocialsModal(e);
         }
         function hideSocialsModal() {
-            if(socialsModal) {
-                socialsModal.classList.add('hidden');
-                socialsModal.classList.remove('flex');
-            }
+            window.hideSocialsModal();
         }
 
         if(openNfcBtn) {
@@ -2504,30 +2537,30 @@
     </a>
 
     <!-- Bottom NavBar (Mobile Only) Stitch Innovation with QR & Socials -->
-    <nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center py-2.5 px-1 bg-brand-dark/95 backdrop-blur-2xl z-[90] border-t border-brand-gold/20 shadow-[0_-10px_30px_rgba(0,0,0,0.8)]">
-        <a href="#hero" class="flex flex-col items-center justify-center text-gray-400 active:scale-95 transition-transform hover:text-brand-gold flex-1">
-            <i data-lucide="home" class="w-4 h-4 mb-0.5"></i>
-            <span class="font-sans uppercase text-[8px] tracking-wider font-bold">Inicio</span>
+    <nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center py-2 px-1 bg-brand-dark/98 backdrop-blur-2xl z-[150] border-t border-brand-gold/30 shadow-[0_-10px_35px_rgba(0,0,0,0.9)] select-none">
+        <a href="#hero" class="flex flex-col items-center justify-center text-gray-400 active:scale-95 transition-transform hover:text-brand-gold flex-1 min-h-[48px]" style="touch-action: manipulation;">
+            <i data-lucide="home" class="w-4 h-4 mb-0.5 pointer-events-none"></i>
+            <span class="font-sans uppercase text-[8px] tracking-wider font-bold pointer-events-none">Inicio</span>
         </a>
-        <a href="#menu" class="flex flex-col items-center justify-center text-gray-400 active:scale-95 transition-transform hover:text-brand-gold flex-1">
-            <i data-lucide="utensils" class="w-4 h-4 mb-0.5"></i>
-            <span class="font-sans uppercase text-[8px] tracking-wider font-bold">Carta</span>
+        <a href="#menu" class="flex flex-col items-center justify-center text-gray-400 active:scale-95 transition-transform hover:text-brand-gold flex-1 min-h-[48px]" style="touch-action: manipulation;">
+            <i data-lucide="utensils" class="w-4 h-4 mb-0.5 pointer-events-none"></i>
+            <span class="font-sans uppercase text-[8px] tracking-wider font-bold pointer-events-none">Carta</span>
         </a>
-        <a href="#cotizar" class="flex flex-col items-center justify-center bg-brand-red/20 text-brand-gold rounded-xl px-2 py-1 active:scale-95 transition-transform border border-brand-red/40 shadow-[0_0_15px_rgba(211,47,47,0.3)] flex-1">
-            <i data-lucide="calendar-check" class="w-4 h-4 mb-0.5 text-brand-red"></i>
-            <span class="font-sans uppercase text-[8px] tracking-wider font-bold text-white">Reserva</span>
+        <a href="#cotizar" class="flex flex-col items-center justify-center bg-brand-red/20 text-brand-gold rounded-xl px-2 py-1 active:scale-95 transition-transform border border-brand-red/40 shadow-[0_0_15px_rgba(211,47,47,0.3)] flex-1 min-h-[48px]" style="touch-action: manipulation;">
+            <i data-lucide="calendar-check" class="w-4 h-4 mb-0.5 text-brand-red pointer-events-none"></i>
+            <span class="font-sans uppercase text-[8px] tracking-wider font-bold text-white pointer-events-none">Reserva</span>
         </a>
-        <button type="button" id="btnMobileBottomQr" class="flex flex-col items-center justify-center text-brand-gold active:scale-95 transition-transform hover:text-white flex-1 relative cursor-pointer" aria-label="Tarjeta QR y Contacto">
-            <span class="relative">
-                <i data-lucide="qr-code" class="w-4 h-4 mb-0.5 text-brand-gold"></i>
-                <span class="absolute -top-1 -right-1 w-1.5 h-1.5 rounded-full bg-brand-red animate-ping"></span>
-                <span class="absolute -top-1 -right-1 w-1.5 h-1.5 rounded-full bg-brand-red"></span>
+        <button type="button" id="btnMobileBottomQr" onclick="window.showNfcModal && window.showNfcModal(event); return false;" style="touch-action: manipulation;" class="flex flex-col items-center justify-center text-brand-gold active:scale-95 transition-transform hover:text-white flex-1 relative cursor-pointer min-h-[48px]" aria-label="Tarjeta QR y Contacto">
+            <span class="relative pointer-events-none">
+                <i data-lucide="qr-code" class="w-4 h-4 mb-0.5 text-brand-gold pointer-events-none"></i>
+                <span class="absolute -top-1 -right-1 w-1.5 h-1.5 rounded-full bg-brand-red animate-ping pointer-events-none"></span>
+                <span class="absolute -top-1 -right-1 w-1.5 h-1.5 rounded-full bg-brand-red pointer-events-none"></span>
             </span>
-            <span class="font-sans uppercase text-[8px] tracking-wider font-bold text-brand-gold">Tarjeta QR</span>
+            <span class="font-sans uppercase text-[8px] tracking-wider font-bold text-brand-gold pointer-events-none">Tarjeta QR</span>
         </button>
-        <button type="button" id="btnMobileBottomSocials" class="flex flex-col items-center justify-center text-gray-400 active:scale-95 transition-transform hover:text-pink-400 flex-1 cursor-pointer" aria-label="Redes Sociales Oficiales">
-            <i data-lucide="share-2" class="w-4 h-4 mb-0.5 text-pink-400"></i>
-            <span class="font-sans uppercase text-[8px] tracking-wider font-bold text-pink-300">Redes</span>
+        <button type="button" id="btnMobileBottomSocials" onclick="window.showSocialsModal && window.showSocialsModal(event); return false;" style="touch-action: manipulation;" class="flex flex-col items-center justify-center text-gray-400 active:scale-95 transition-transform hover:text-pink-400 flex-1 cursor-pointer min-h-[48px]" aria-label="Redes Sociales Oficiales">
+            <i data-lucide="share-2" class="w-4 h-4 mb-0.5 text-pink-400 pointer-events-none"></i>
+            <span class="font-sans uppercase text-[8px] tracking-wider font-bold text-pink-300 pointer-events-none">Redes</span>
         </button>
     </nav>
 </body>
