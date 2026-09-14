@@ -2337,20 +2337,6 @@
         const btnMobileBottomSocials = document.getElementById('btnMobileBottomSocials');
         const btnSwitchToQrModal = document.getElementById('btnSwitchToQrModal');
         const linkGoToSectionFromModal = document.getElementById('linkGoToSectionFromModal');
-
-        function showNfcModal(e) {
-            window.showNfcModal(e);
-        }
-        function hideNfcModal() {
-            window.hideNfcModal();
-        }
-        function showSocialsModal(e) {
-            window.showSocialsModal(e);
-        }
-        function hideSocialsModal() {
-            window.hideSocialsModal();
-        }
-
         if(openNfcBtn) {
             openNfcBtn.addEventListener('click', (e) => {
                 const targetSec = document.getElementById('tarjeta-digital');
@@ -2358,38 +2344,36 @@
                     e.preventDefault();
                     targetSec.scrollIntoView({ behavior: 'smooth' });
                 } else {
-                    showNfcModal();
+                    window.showNfcModal(e);
                 }
             });
         }
         if(btnMobileBottomQr) {
             btnMobileBottomQr.addEventListener('click', (e) => {
-                e.preventDefault();
-                showNfcModal();
+                window.showNfcModal(e);
             });
         }
         if(btnMobileBottomSocials) {
             btnMobileBottomSocials.addEventListener('click', (e) => {
-                e.preventDefault();
-                showSocialsModal();
+                window.showSocialsModal(e);
             });
         }
-        if(btnSwitchToQrModal) btnSwitchToQrModal.addEventListener('click', showNfcModal);
+        if(btnSwitchToQrModal) btnSwitchToQrModal.addEventListener('click', (e) => window.showNfcModal(e));
         if(linkGoToSectionFromModal) {
             linkGoToSectionFromModal.addEventListener('click', () => {
-                hideNfcModal();
+                window.hideNfcModal();
             });
         }
-        if(closeNfcBtn) closeNfcBtn.addEventListener('click', hideNfcModal);
-        if(closeSocialsBtn) closeSocialsBtn.addEventListener('click', hideSocialsModal);
+        if(closeNfcBtn) closeNfcBtn.addEventListener('click', () => window.hideNfcModal());
+        if(closeSocialsBtn) closeSocialsBtn.addEventListener('click', () => window.hideSocialsModal());
         if(nfcModal) {
             nfcModal.addEventListener('click', (e) => {
-                if(e.target === nfcModal) hideNfcModal();
+                if(e.target === nfcModal) window.hideNfcModal();
             });
         }
         if(socialsModal) {
             socialsModal.addEventListener('click', (e) => {
-                if(e.target === socialsModal) hideSocialsModal();
+                if(e.target === socialsModal) window.hideSocialsModal();
             });
         }
 

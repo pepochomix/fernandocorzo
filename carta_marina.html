@@ -1921,20 +1921,6 @@
         const btnMobileBottomSocialsMarina = document.getElementById('btnMobileBottomSocialsMarina');
         const btnSwitchToQrModalMarina = document.getElementById('btnSwitchToQrModalMarina');
         const linkGoToSectionFromModalMarina = document.getElementById('linkGoToSectionFromModalMarina');
-
-        function showNfcModalMarino(e) {
-            window.showNfcModalMarino(e);
-        }
-        function hideNfcModalMarino() {
-            window.hideNfcModalMarino();
-        }
-        function showSocialsModalMarina(e) {
-            window.showSocialsModalMarina(e);
-        }
-        function hideSocialsModalMarina() {
-            window.hideSocialsModalMarina();
-        }
-
         if(openNfcBtnMarino) {
             openNfcBtnMarino.addEventListener('click', (e) => {
                 const targetSec = document.getElementById('tarjeta-digital');
@@ -1942,38 +1928,36 @@
                     e.preventDefault();
                     targetSec.scrollIntoView({ behavior: 'smooth' });
                 } else {
-                    showNfcModalMarino();
+                    window.showNfcModalMarino(e);
                 }
             });
         }
         if(btnMobileBottomQrMarina) {
             btnMobileBottomQrMarina.addEventListener('click', (e) => {
-                e.preventDefault();
-                showNfcModalMarino();
+                window.showNfcModalMarino(e);
             });
         }
         if(btnMobileBottomSocialsMarina) {
             btnMobileBottomSocialsMarina.addEventListener('click', (e) => {
-                e.preventDefault();
-                showSocialsModalMarina();
+                window.showSocialsModalMarina(e);
             });
         }
-        if(btnSwitchToQrModalMarina) btnSwitchToQrModalMarina.addEventListener('click', showNfcModalMarino);
+        if(btnSwitchToQrModalMarina) btnSwitchToQrModalMarina.addEventListener('click', (e) => window.showNfcModalMarino(e));
         if(linkGoToSectionFromModalMarina) {
             linkGoToSectionFromModalMarina.addEventListener('click', () => {
-                hideNfcModalMarino();
+                window.hideNfcModalMarino();
             });
         }
-        if(closeNfcBtnMarino) closeNfcBtnMarino.addEventListener('click', hideNfcModalMarino);
-        if(closeSocialsBtnMarina) closeSocialsBtnMarina.addEventListener('click', hideSocialsModalMarina);
+        if(closeNfcBtnMarino) closeNfcBtnMarino.addEventListener('click', () => window.hideNfcModalMarino());
+        if(closeSocialsBtnMarina) closeSocialsBtnMarina.addEventListener('click', () => window.hideSocialsModalMarina());
         if(nfcModalMarino) {
             nfcModalMarino.addEventListener('click', (e) => {
-                if(e.target === nfcModalMarino) hideNfcModalMarino();
+                if(e.target === nfcModalMarino) window.hideNfcModalMarino();
             });
         }
         if(socialsModalMarina) {
             socialsModalMarina.addEventListener('click', (e) => {
-                if(e.target === socialsModalMarina) hideSocialsModalMarina();
+                if(e.target === socialsModalMarina) window.hideSocialsModalMarina();
             });
         }
 
