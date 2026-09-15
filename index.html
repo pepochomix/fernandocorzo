@@ -221,8 +221,33 @@
     </script>
 
     <style>
+        /* Modal Universal Mobile-Safe Scrolling and Centering */
+        #nfcModal, #socialsModal {
+            overflow-y: auto !important;
+            overscroll-behavior: contain !important;
+        }
+        #nfcModal.flex, #socialsModal.flex {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            justify-content: flex-start !important;
+        }
         .touch-manipulation {
             touch-action: manipulation;
+        }
+        /* Smooth Mobile Swiper Touch Optimization */
+        .mySwiper {
+            touch-action: pan-y !important;
+            -webkit-user-select: none;
+            user-select: none;
+            overflow: hidden;
+        }
+        .mySwiper .swiper-slide {
+            height: auto;
+            touch-action: pan-y !important;
+        }
+        .touch-pan-x {
+            touch-action: pan-x !important;
         }
         .no-scrollbar::-webkit-scrollbar {
             display: none;
@@ -926,153 +951,158 @@
         <div class="absolute bottom-0 right-[20%] w-[500px] h-[500px] bg-brand-red/10 rounded-full blur-[120px] pointer-events-none"></div>
         
         <div class="max-w-7xl mx-auto relative z-10">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="font-serif text-4xl md:text-5xl font-bold mb-4 text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.1)] relative inline-block">
+            <div class="text-center mb-10 sm:mb-16" data-aos="fade-up">
+                <h2 class="font-serif text-2xl sm:text-3xl md:text-5xl font-bold mb-3 sm:mb-4 text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.1)] relative inline-block">
                     Experiencias & Reseñas de Clientes en Lima y Sur Chico
-                    <div class="absolute -top-8 -left-8 text-brand-gold/20 font-serif text-8xl pointer-events-none select-none">"</div>
+                    <div class="absolute -top-6 -left-6 sm:-top-8 sm:-left-8 text-brand-gold/20 font-serif text-6xl sm:text-8xl pointer-events-none select-none">"</div>
                 </h2>
-                <p class="text-brand-gold font-medium tracking-widest uppercase text-sm mt-2">Experiencias que hablan por sí solas</p>
+                <p class="text-brand-gold font-medium tracking-widest uppercase text-xs sm:text-sm mt-1 sm:mt-2">Experiencias que hablan por sí solas</p>
             </div>
 
             <!-- Swiper Carousel -->
-            <div class="swiper mySwiper !pb-16">
+            <div class="swiper mySwiper !pb-10 sm:!pb-14">
                 <div class="swiper-wrapper">
                     <!-- Comment 1 -->
-                    <div class="swiper-slide p-8 md:p-10 rounded-[2.5rem] bg-white/[0.03] backdrop-blur-2xl border border-white/5 shadow-[0_8px_32px_rgba(0,0,0,0.6)] transition-all duration-700 hover:-translate-y-4 hover:border-brand-gold/30 hover:shadow-[0_20px_60px_rgba(251,192,45,0.15)] group relative overflow-hidden flex flex-col h-auto">
+                    <div class="swiper-slide p-5 sm:p-7 md:p-9 rounded-2xl sm:rounded-3xl md:rounded-[2.5rem] bg-white/[0.03] backdrop-blur-2xl border border-white/5 shadow-[0_8px_32px_rgba(0,0,0,0.6)] transition-all duration-500 hover:-translate-y-2 hover:border-brand-gold/30 hover:shadow-[0_20px_60px_rgba(251,192,45,0.15)] group relative overflow-hidden flex flex-col h-auto">
                         <!-- Watermark Quote -->
-                        <div class="absolute -top-10 -right-4 text-brand-gold/10 font-serif text-[180px] leading-none pointer-events-none select-none transition-transform duration-1000 group-hover:scale-110 group-hover:text-brand-gold/20">"</div>
+                        <div class="absolute -top-6 -right-2 text-brand-gold/10 font-serif text-[100px] sm:text-[140px] md:text-[180px] leading-none pointer-events-none select-none transition-transform duration-1000 group-hover:scale-110 group-hover:text-brand-gold/20">"</div>
                         <!-- Content -->
                         <div class="relative z-10 flex-1 flex flex-col">
-                            <div class="flex text-brand-gold mb-6 drop-shadow-[0_0_10px_rgba(251,192,45,0.6)] transition-transform duration-500 group-hover:scale-105 origin-left">
-                                <i data-lucide="star" class="fill-current w-5 h-5"></i>
-                                <i data-lucide="star" class="fill-current w-5 h-5"></i>
-                                <i data-lucide="star" class="fill-current w-5 h-5"></i>
-                                <i data-lucide="star" class="fill-current w-5 h-5"></i>
-                                <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                            <div class="flex text-brand-gold mb-3.5 sm:mb-5 drop-shadow-[0_0_10px_rgba(251,192,45,0.6)] transition-transform duration-500 group-hover:scale-105 origin-left">
+                                <i data-lucide="star" class="fill-current w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
+                                <i data-lucide="star" class="fill-current w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
+                                <i data-lucide="star" class="fill-current w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
+                                <i data-lucide="star" class="fill-current w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
+                                <i data-lucide="star" class="fill-current w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
                             </div>
-                            <p class="text-gray-300 italic mb-8 leading-relaxed font-light text-lg flex-1">"El show en vivo de preparación de la paella fue el centro de atención en nuestra celebración de fin de año en la empresa. Un sabor increíble y una presentación de lujo."</p>
-                            <div class="flex items-center gap-4 mt-auto pt-6 border-t border-white/10 transition-colors duration-500 group-hover:border-brand-gold/30">
-                                <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-brand-red to-brand-gold flex items-center justify-center font-bold text-white shadow-[0_0_15px_rgba(211,47,47,0.5)] ring-2 ring-brand-gold/30">M</div>
+                            <p class="text-gray-300 italic mb-5 sm:mb-6 leading-relaxed font-light text-xs sm:text-sm md:text-base flex-1">"El show en vivo de preparación de la paella fue el centro de atención en nuestra celebración de fin de año en la empresa. Un sabor increíble y una presentación de lujo."</p>
+                            <div class="flex items-center gap-3.5 sm:gap-4 mt-auto pt-3.5 sm:pt-4 border-t border-white/10 transition-colors duration-500 group-hover:border-brand-gold/30">
+                                <div class="w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-gradient-to-tr from-brand-red to-brand-gold flex items-center justify-center font-bold text-white text-xs sm:text-sm shadow-[0_0_15px_rgba(211,47,47,0.5)] ring-2 ring-brand-gold/30">M</div>
                                 <div>
-                                    <h4 class="font-bold text-white text-lg tracking-wide">María C.</h4>
-                                    <p class="text-xs text-brand-gold uppercase tracking-wider font-semibold">Evento Corporativo</p>
+                                    <h4 class="font-bold text-white text-sm sm:text-base tracking-wide">María C.</h4>
+                                    <p class="text-[10px] sm:text-xs text-brand-gold uppercase tracking-wider font-semibold">Evento Corporativo</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     
                     <!-- Comment 2 -->
-                    <div class="swiper-slide p-8 md:p-10 rounded-[2.5rem] bg-white/[0.03] backdrop-blur-2xl border border-white/5 shadow-[0_8px_32px_rgba(0,0,0,0.6)] transition-all duration-700 hover:-translate-y-4 hover:border-brand-gold/30 hover:shadow-[0_20px_60px_rgba(251,192,45,0.15)] group relative overflow-hidden flex flex-col h-auto">
-                        <div class="absolute -top-10 -right-4 text-brand-gold/10 font-serif text-[180px] leading-none pointer-events-none select-none transition-transform duration-1000 group-hover:scale-110 group-hover:text-brand-gold/20">"</div>
+                    <div class="swiper-slide p-5 sm:p-7 md:p-9 rounded-2xl sm:rounded-3xl md:rounded-[2.5rem] bg-white/[0.03] backdrop-blur-2xl border border-white/5 shadow-[0_8px_32px_rgba(0,0,0,0.6)] transition-all duration-500 hover:-translate-y-2 hover:border-brand-gold/30 hover:shadow-[0_20px_60px_rgba(251,192,45,0.15)] group relative overflow-hidden flex flex-col h-auto">
+                        <div class="absolute -top-6 -right-2 text-brand-gold/10 font-serif text-[100px] sm:text-[140px] md:text-[180px] leading-none pointer-events-none select-none transition-transform duration-1000 group-hover:scale-110 group-hover:text-brand-gold/20">"</div>
                         <div class="relative z-10 flex-1 flex flex-col">
-                            <div class="flex text-brand-gold mb-6 drop-shadow-[0_0_10px_rgba(251,192,45,0.6)] transition-transform duration-500 group-hover:scale-105 origin-left">
-                                <i data-lucide="star" class="fill-current w-5 h-5"></i>
-                                <i data-lucide="star" class="fill-current w-5 h-5"></i>
-                                <i data-lucide="star" class="fill-current w-5 h-5"></i>
-                                <i data-lucide="star" class="fill-current w-5 h-5"></i>
-                                <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                            <div class="flex text-brand-gold mb-3.5 sm:mb-5 drop-shadow-[0_0_10px_rgba(251,192,45,0.6)] transition-transform duration-500 group-hover:scale-105 origin-left">
+                                <i data-lucide="star" class="fill-current w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
+                                <i data-lucide="star" class="fill-current w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
+                                <i data-lucide="star" class="fill-current w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
+                                <i data-lucide="star" class="fill-current w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
+                                <i data-lucide="star" class="fill-current w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
                             </div>
-                            <p class="text-gray-300 italic mb-8 leading-relaxed font-light text-lg flex-1">"La Paella de Mariscos es sin lugar a duda la mejor de Lima. Generosa, llena de sabor y con el toque exacto. Mi familia quedó fascinada. Las tapas también son buenísimas!"</p>
-                            <div class="flex items-center gap-4 mt-auto pt-6 border-t border-white/10 transition-colors duration-500 group-hover:border-brand-gold/30">
-                                <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-brand-red to-brand-gold flex items-center justify-center font-bold text-white shadow-[0_0_15px_rgba(211,47,47,0.5)] ring-2 ring-brand-gold/30">J</div>
+                            <p class="text-gray-300 italic mb-5 sm:mb-6 leading-relaxed font-light text-xs sm:text-sm md:text-base flex-1">"La Paella de Mariscos es sin lugar a duda la mejor de Lima. Generosa, llena de sabor y con el toque exacto. Mi familia quedó fascinada. Las tapas también son buenísimas!"</p>
+                            <div class="flex items-center gap-3.5 sm:gap-4 mt-auto pt-3.5 sm:pt-4 border-t border-white/10 transition-colors duration-500 group-hover:border-brand-gold/30">
+                                <div class="w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-gradient-to-tr from-brand-red to-brand-gold flex items-center justify-center font-bold text-white text-xs sm:text-sm shadow-[0_0_15px_rgba(211,47,47,0.5)] ring-2 ring-brand-gold/30">J</div>
                                 <div>
-                                    <h4 class="font-bold text-white text-lg tracking-wide">Juan P.</h4>
-                                    <p class="text-xs text-brand-gold uppercase tracking-wider font-semibold">Cumpleaños Familiar</p>
+                                    <h4 class="font-bold text-white text-sm sm:text-base tracking-wide">Juan P.</h4>
+                                    <p class="text-[10px] sm:text-xs text-brand-gold uppercase tracking-wider font-semibold">Cumpleaños Familiar</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Comment 3 -->
-                    <div class="swiper-slide p-8 md:p-10 rounded-[2.5rem] bg-white/[0.03] backdrop-blur-2xl border border-white/5 shadow-[0_8px_32px_rgba(0,0,0,0.6)] transition-all duration-700 hover:-translate-y-4 hover:border-brand-gold/30 hover:shadow-[0_20px_60px_rgba(251,192,45,0.15)] group relative overflow-hidden flex flex-col h-auto">
-                        <div class="absolute -top-10 -right-4 text-brand-gold/10 font-serif text-[180px] leading-none pointer-events-none select-none transition-transform duration-1000 group-hover:scale-110 group-hover:text-brand-gold/20">"</div>
+                    <div class="swiper-slide p-5 sm:p-7 md:p-9 rounded-2xl sm:rounded-3xl md:rounded-[2.5rem] bg-white/[0.03] backdrop-blur-2xl border border-white/5 shadow-[0_8px_32px_rgba(0,0,0,0.6)] transition-all duration-500 hover:-translate-y-2 hover:border-brand-gold/30 hover:shadow-[0_20px_60px_rgba(251,192,45,0.15)] group relative overflow-hidden flex flex-col h-auto">
+                        <div class="absolute -top-6 -right-2 text-brand-gold/10 font-serif text-[100px] sm:text-[140px] md:text-[180px] leading-none pointer-events-none select-none transition-transform duration-1000 group-hover:scale-110 group-hover:text-brand-gold/20">"</div>
                         <div class="relative z-10 flex-1 flex flex-col">
-                            <div class="flex text-brand-gold mb-6 drop-shadow-[0_0_10px_rgba(251,192,45,0.6)] transition-transform duration-500 group-hover:scale-105 origin-left">
-                                <i data-lucide="star" class="fill-current w-5 h-5"></i>
-                                <i data-lucide="star" class="fill-current w-5 h-5"></i>
-                                <i data-lucide="star" class="fill-current w-5 h-5"></i>
-                                <i data-lucide="star" class="fill-current w-5 h-5"></i>
-                                <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                            <div class="flex text-brand-gold mb-3.5 sm:mb-5 drop-shadow-[0_0_10px_rgba(251,192,45,0.6)] transition-transform duration-500 group-hover:scale-105 origin-left">
+                                <i data-lucide="star" class="fill-current w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
+                                <i data-lucide="star" class="fill-current w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
+                                <i data-lucide="star" class="fill-current w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
+                                <i data-lucide="star" class="fill-current w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
+                                <i data-lucide="star" class="fill-current w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
                             </div>
-                            <p class="text-gray-300 italic mb-8 leading-relaxed font-light text-lg flex-1">"Excelente servicio. Puntuales, profesionales y la comida es para chuparse los dedos. El pulpo al olivo de entrada es obligatorio pedirlo. 100% recomendados."</p>
-                            <div class="flex items-center gap-4 mt-auto pt-6 border-t border-white/10 transition-colors duration-500 group-hover:border-brand-gold/30">
-                                <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-brand-red to-brand-gold flex items-center justify-center font-bold text-white shadow-[0_0_15px_rgba(211,47,47,0.5)] ring-2 ring-brand-gold/30">A</div>
+                            <p class="text-gray-300 italic mb-5 sm:mb-6 leading-relaxed font-light text-xs sm:text-sm md:text-base flex-1">"Excelente servicio. Puntuales, profesionales y la comida es para chuparse los dedos. El pulpo al olivo de entrada es obligatorio pedirlo. 100% recomendados."</p>
+                            <div class="flex items-center gap-3.5 sm:gap-4 mt-auto pt-3.5 sm:pt-4 border-t border-white/10 transition-colors duration-500 group-hover:border-brand-gold/30">
+                                <div class="w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-gradient-to-tr from-brand-red to-brand-gold flex items-center justify-center font-bold text-white text-xs sm:text-sm shadow-[0_0_15px_rgba(211,47,47,0.5)] ring-2 ring-brand-gold/30">A</div>
                                 <div>
-                                    <h4 class="font-bold text-white text-lg tracking-wide">Andrea V.</h4>
-                                    <p class="text-xs text-brand-gold uppercase tracking-wider font-semibold">Almuerzo Dominical</p>
+                                    <h4 class="font-bold text-white text-sm sm:text-base tracking-wide">Andrea V.</h4>
+                                    <p class="text-[10px] sm:text-xs text-brand-gold uppercase tracking-wider font-semibold">Almuerzo Dominical</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Comment 4 -->
-                    <div class="swiper-slide p-8 md:p-10 rounded-[2.5rem] bg-white/[0.03] backdrop-blur-2xl border border-white/5 shadow-[0_8px_32px_rgba(0,0,0,0.6)] transition-all duration-700 hover:-translate-y-4 hover:border-brand-gold/30 hover:shadow-[0_20px_60px_rgba(251,192,45,0.15)] group relative overflow-hidden flex flex-col h-auto">
-                        <div class="absolute -top-10 -right-4 text-brand-gold/10 font-serif text-[180px] leading-none pointer-events-none select-none transition-transform duration-1000 group-hover:scale-110 group-hover:text-brand-gold/20">"</div>
+                    <div class="swiper-slide p-5 sm:p-7 md:p-9 rounded-2xl sm:rounded-3xl md:rounded-[2.5rem] bg-white/[0.03] backdrop-blur-2xl border border-white/5 shadow-[0_8px_32px_rgba(0,0,0,0.6)] transition-all duration-500 hover:-translate-y-2 hover:border-brand-gold/30 hover:shadow-[0_20px_60px_rgba(251,192,45,0.15)] group relative overflow-hidden flex flex-col h-auto">
+                        <div class="absolute -top-6 -right-2 text-brand-gold/10 font-serif text-[100px] sm:text-[140px] md:text-[180px] leading-none pointer-events-none select-none transition-transform duration-1000 group-hover:scale-110 group-hover:text-brand-gold/20">"</div>
                         <div class="relative z-10 flex-1 flex flex-col">
-                            <div class="flex text-brand-gold mb-6 drop-shadow-[0_0_10px_rgba(251,192,45,0.6)] transition-transform duration-500 group-hover:scale-105 origin-left">
-                                <i data-lucide="star" class="fill-current w-5 h-5"></i>
-                                <i data-lucide="star" class="fill-current w-5 h-5"></i>
-                                <i data-lucide="star" class="fill-current w-5 h-5"></i>
-                                <i data-lucide="star" class="fill-current w-5 h-5"></i>
-                                <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                            <div class="flex text-brand-gold mb-3.5 sm:mb-5 drop-shadow-[0_0_10px_rgba(251,192,45,0.6)] transition-transform duration-500 group-hover:scale-105 origin-left">
+                                <i data-lucide="star" class="fill-current w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
+                                <i data-lucide="star" class="fill-current w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
+                                <i data-lucide="star" class="fill-current w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
+                                <i data-lucide="star" class="fill-current w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
+                                <i data-lucide="star" class="fill-current w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
                             </div>
-                            <p class="text-gray-300 italic mb-8 leading-relaxed font-light text-lg flex-1">"Confié en Fernando para mi cumpleaños 50 y fue la mejor decisión. La presentación de la paella en vivo fue un espectáculo para todos los invitados. ¡Recomendadísimo!"</p>
-                            <div class="flex items-center gap-4 mt-auto pt-6 border-t border-white/10 transition-colors duration-500 group-hover:border-brand-gold/30">
-                                <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-brand-red to-brand-gold flex items-center justify-center font-bold text-white shadow-[0_0_15px_rgba(211,47,47,0.5)] ring-2 ring-brand-gold/30">C</div>
+                            <p class="text-gray-300 italic mb-5 sm:mb-6 leading-relaxed font-light text-xs sm:text-sm md:text-base flex-1">"Confié en Fernando para mi cumpleaños 50 y fue la mejor decisión. La presentación de la paella en vivo fue un espectáculo para todos los invitados. ¡Recomendadísimo!"</p>
+                            <div class="flex items-center gap-3.5 sm:gap-4 mt-auto pt-3.5 sm:pt-4 border-t border-white/10 transition-colors duration-500 group-hover:border-brand-gold/30">
+                                <div class="w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-gradient-to-tr from-brand-red to-brand-gold flex items-center justify-center font-bold text-white text-xs sm:text-sm shadow-[0_0_15px_rgba(211,47,47,0.5)] ring-2 ring-brand-gold/30">C</div>
                                 <div>
-                                    <h4 class="font-bold text-white text-lg tracking-wide">Carlos M.</h4>
-                                    <p class="text-xs text-brand-gold uppercase tracking-wider font-semibold">Vía Facebook</p>
+                                    <h4 class="font-bold text-white text-sm sm:text-base tracking-wide">Carlos M.</h4>
+                                    <p class="text-[10px] sm:text-xs text-brand-gold uppercase tracking-wider font-semibold">Vía Facebook</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Comment 5 -->
-                    <div class="swiper-slide p-8 md:p-10 rounded-[2.5rem] bg-white/[0.03] backdrop-blur-2xl border border-white/5 shadow-[0_8px_32px_rgba(0,0,0,0.6)] transition-all duration-700 hover:-translate-y-4 hover:border-brand-gold/30 hover:shadow-[0_20px_60px_rgba(251,192,45,0.15)] group relative overflow-hidden flex flex-col h-auto">
-                        <div class="absolute -top-10 -right-4 text-brand-gold/10 font-serif text-[180px] leading-none pointer-events-none select-none transition-transform duration-1000 group-hover:scale-110 group-hover:text-brand-gold/20">"</div>
+                    <div class="swiper-slide p-5 sm:p-7 md:p-9 rounded-2xl sm:rounded-3xl md:rounded-[2.5rem] bg-white/[0.03] backdrop-blur-2xl border border-white/5 shadow-[0_8px_32px_rgba(0,0,0,0.6)] transition-all duration-500 hover:-translate-y-2 hover:border-brand-gold/30 hover:shadow-[0_20px_60px_rgba(251,192,45,0.15)] group relative overflow-hidden flex flex-col h-auto">
+                        <div class="absolute -top-6 -right-2 text-brand-gold/10 font-serif text-[100px] sm:text-[140px] md:text-[180px] leading-none pointer-events-none select-none transition-transform duration-1000 group-hover:scale-110 group-hover:text-brand-gold/20">"</div>
                         <div class="relative z-10 flex-1 flex flex-col">
-                            <div class="flex text-brand-gold mb-6 drop-shadow-[0_0_10px_rgba(251,192,45,0.6)] transition-transform duration-500 group-hover:scale-105 origin-left">
-                                <i data-lucide="star" class="fill-current w-5 h-5"></i>
-                                <i data-lucide="star" class="fill-current w-5 h-5"></i>
-                                <i data-lucide="star" class="fill-current w-5 h-5"></i>
-                                <i data-lucide="star" class="fill-current w-5 h-5"></i>
-                                <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                            <div class="flex text-brand-gold mb-3.5 sm:mb-5 drop-shadow-[0_0_10px_rgba(251,192,45,0.6)] transition-transform duration-500 group-hover:scale-105 origin-left">
+                                <i data-lucide="star" class="fill-current w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
+                                <i data-lucide="star" class="fill-current w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
+                                <i data-lucide="star" class="fill-current w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
+                                <i data-lucide="star" class="fill-current w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
+                                <i data-lucide="star" class="fill-current w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
                             </div>
-                            <p class="text-gray-300 italic mb-8 leading-relaxed font-light text-lg flex-1">"Riquísimo todo. Contratamos el show para la fiesta de la oficina y todos mis compañeros quedaron encantados. La Paella Negra simplemente espectacular, de otro nivel."</p>
-                            <div class="flex items-center gap-4 mt-auto pt-6 border-t border-white/10 transition-colors duration-500 group-hover:border-brand-gold/30">
-                                <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-brand-red to-brand-gold flex items-center justify-center font-bold text-white shadow-[0_0_15px_rgba(211,47,47,0.5)] ring-2 ring-brand-gold/30">S</div>
+                            <p class="text-gray-300 italic mb-5 sm:mb-6 leading-relaxed font-light text-xs sm:text-sm md:text-base flex-1">"Riquísimo todo. Contratamos el show para la fiesta de la oficina y todos mis compañeros quedaron encantados. La Paella Negra simplemente espectacular, de otro nivel."</p>
+                            <div class="flex items-center gap-3.5 sm:gap-4 mt-auto pt-3.5 sm:pt-4 border-t border-white/10 transition-colors duration-500 group-hover:border-brand-gold/30">
+                                <div class="w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-gradient-to-tr from-brand-red to-brand-gold flex items-center justify-center font-bold text-white text-xs sm:text-sm shadow-[0_0_15px_rgba(211,47,47,0.5)] ring-2 ring-brand-gold/30">S</div>
                                 <div>
-                                    <h4 class="font-bold text-white text-lg tracking-wide">Silvia G.</h4>
-                                    <p class="text-xs text-brand-gold uppercase tracking-wider font-semibold">Vía Facebook</p>
+                                    <h4 class="font-bold text-white text-sm sm:text-base tracking-wide">Silvia G.</h4>
+                                    <p class="text-[10px] sm:text-xs text-brand-gold uppercase tracking-wider font-semibold">Vía Facebook</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Comment 6 -->
-                    <div class="swiper-slide p-8 md:p-10 rounded-[2.5rem] bg-white/[0.03] backdrop-blur-2xl border border-white/5 shadow-[0_8px_32px_rgba(0,0,0,0.6)] transition-all duration-700 hover:-translate-y-4 hover:border-brand-gold/30 hover:shadow-[0_20px_60px_rgba(251,192,45,0.15)] group relative overflow-hidden flex flex-col h-auto">
-                        <div class="absolute -top-10 -right-4 text-brand-gold/10 font-serif text-[180px] leading-none pointer-events-none select-none transition-transform duration-1000 group-hover:scale-110 group-hover:text-brand-gold/20">"</div>
+                    <div class="swiper-slide p-5 sm:p-7 md:p-9 rounded-2xl sm:rounded-3xl md:rounded-[2.5rem] bg-white/[0.03] backdrop-blur-2xl border border-white/5 shadow-[0_8px_32px_rgba(0,0,0,0.6)] transition-all duration-500 hover:-translate-y-2 hover:border-brand-gold/30 hover:shadow-[0_20px_60px_rgba(251,192,45,0.15)] group relative overflow-hidden flex flex-col h-auto">
+                        <div class="absolute -top-6 -right-2 text-brand-gold/10 font-serif text-[100px] sm:text-[140px] md:text-[180px] leading-none pointer-events-none select-none transition-transform duration-1000 group-hover:scale-110 group-hover:text-brand-gold/20">"</div>
                         <div class="relative z-10 flex-1 flex flex-col">
-                            <div class="flex text-brand-gold mb-6 drop-shadow-[0_0_10px_rgba(251,192,45,0.6)] transition-transform duration-500 group-hover:scale-105 origin-left">
-                                <i data-lucide="star" class="fill-current w-5 h-5"></i>
-                                <i data-lucide="star" class="fill-current w-5 h-5"></i>
-                                <i data-lucide="star" class="fill-current w-5 h-5"></i>
-                                <i data-lucide="star" class="fill-current w-5 h-5"></i>
-                                <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                            <div class="flex text-brand-gold mb-3.5 sm:mb-5 drop-shadow-[0_0_10px_rgba(251,192,45,0.6)] transition-transform duration-500 group-hover:scale-105 origin-left">
+                                <i data-lucide="star" class="fill-current w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
+                                <i data-lucide="star" class="fill-current w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
+                                <i data-lucide="star" class="fill-current w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
+                                <i data-lucide="star" class="fill-current w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
+                                <i data-lucide="star" class="fill-current w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
                             </div>
-                            <p class="text-gray-300 italic mb-8 leading-relaxed font-light text-lg flex-1">"Excelente calidad en cada uno de los ingredientes, porciones súper abundantes y la atención A1. Se acaban de ganar a un cliente muy fiel para futuros eventos."</p>
-                            <div class="flex items-center gap-4 mt-auto pt-6 border-t border-white/10 transition-colors duration-500 group-hover:border-brand-gold/30">
-                                <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-brand-red to-brand-gold flex items-center justify-center font-bold text-white shadow-[0_0_15px_rgba(211,47,47,0.5)] ring-2 ring-brand-gold/30">L</div>
+                            <p class="text-gray-300 italic mb-5 sm:mb-6 leading-relaxed font-light text-xs sm:text-sm md:text-base flex-1">"Excelente calidad en cada uno de los ingredientes, porciones súper abundantes y la atención A1. Se acaban de ganar a un cliente muy fiel para futuros eventos."</p>
+                            <div class="flex items-center gap-3.5 sm:gap-4 mt-auto pt-3.5 sm:pt-4 border-t border-white/10 transition-colors duration-500 group-hover:border-brand-gold/30">
+                                <div class="w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-gradient-to-tr from-brand-red to-brand-gold flex items-center justify-center font-bold text-white text-xs sm:text-sm shadow-[0_0_15px_rgba(211,47,47,0.5)] ring-2 ring-brand-gold/30">L</div>
                                 <div>
-                                    <h4 class="font-bold text-white text-lg tracking-wide">Luis F.</h4>
-                                    <p class="text-xs text-brand-gold uppercase tracking-wider font-semibold">Vía Facebook</p>
+                                    <h4 class="font-bold text-white text-sm sm:text-base tracking-wide">Luis F.</h4>
+                                    <p class="text-[10px] sm:text-xs text-brand-gold uppercase tracking-wider font-semibold">Vía Facebook</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- Pagination -->
-                <div class="swiper-pagination !relative !mt-12 opacity-80 decoration-brand-gold"></div>
+                <div class="swiper-pagination !relative !mt-8 md:!mt-12 opacity-80 decoration-brand-gold"></div>
+            </div>
+
+            <!-- Mobile Swipe Hint -->
+            <div class="flex md:hidden items-center justify-center gap-1.5 text-[11px] text-brand-gold/80 -mt-4 mb-6 font-medium tracking-wide">
+                <i data-lucide="arrow-left-right" class="w-3.5 h-3.5 animate-pulse"></i> Desliza suavemente con el dedo
             </div>
             
             <div class="flex flex-wrap items-center justify-center gap-4 mt-8 relative z-20" data-aos="fade-up">
@@ -1200,47 +1230,64 @@
                 </p>
             </div>
 
-            <!-- B2B Pillars Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-                <div class="glass-card card-3d p-6 rounded-3xl border border-white/10 hover:border-brand-gold/40 transition-all duration-300 group">
-                    <div class="w-12 h-12 rounded-2xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold mb-5 group-hover:scale-110 transition-transform">
-                        <i data-lucide="receipt" class="w-6 h-6"></i>
+            <!-- B2B Pillars Grid (Horizontal scroll on mobile, 4-col on desktop) -->
+            <div class="flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-5 lg:gap-6 mb-8 md:mb-16 overflow-x-auto md:overflow-visible pb-4 pt-1 px-4 -mx-4 md:px-0 md:mx-0 snap-x snap-mandatory no-scrollbar touch-pan-x">
+                <!-- Card 1: Facturación Comercial RUC -->
+                <div class="snap-start shrink-0 w-[240px] sm:w-[260px] md:w-auto glass-card card-3d p-4 sm:p-5 md:p-6 rounded-2xl sm:rounded-3xl border border-white/10 hover:border-brand-gold/40 transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-gradient-to-br from-amber-400/25 via-brand-gold/15 to-transparent border border-amber-400/50 flex items-center justify-center text-amber-300 shadow-[0_0_15px_rgba(251,192,45,0.25)] group-hover:scale-110 transition-transform mb-3.5 sm:mb-5">
+                            <i data-lucide="receipt" class="w-5 h-5 sm:w-6 sm:h-6 text-brand-gold drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"></i>
+                        </div>
+                        <h3 class="font-serif text-base sm:text-lg md:text-xl font-bold text-white mb-1.5 sm:mb-2 group-hover:text-brand-gold transition-colors">Facturación Comercial RUC</h3>
+                        <p class="text-xs sm:text-sm text-gray-300/90 leading-relaxed">
+                            Emisión formal de Factura Electrónica Comercial. Cumplimiento estricto de requerimientos tributarios, órdenes de compra y cotizaciones membretadas.
+                        </p>
                     </div>
-                    <h3 class="font-serif text-xl font-bold text-white mb-2 group-hover:text-brand-gold transition-colors">Facturación Comercial RUC</h3>
-                    <p class="text-xs sm:text-sm text-gray-400 leading-relaxed">
-                        Emisión formal de Factura Electrónica Comercial. Cumplimiento estricto de requerimientos tributarios, órdenes de compra y cotizaciones membretadas.
-                    </p>
                 </div>
 
-                <div class="glass-card card-3d p-6 rounded-3xl border border-white/10 hover:border-brand-gold/40 transition-all duration-300 group">
-                    <div class="w-12 h-12 rounded-2xl bg-brand-red/10 border border-brand-red/30 flex items-center justify-center text-brand-red mb-5 group-hover:scale-110 transition-transform">
-                        <i data-lucide="users-2" class="w-6 h-6"></i>
+                <!-- Card 2: Escalable 15 a 150+ Pax -->
+                <div class="snap-start shrink-0 w-[240px] sm:w-[260px] md:w-auto glass-card card-3d p-4 sm:p-5 md:p-6 rounded-2xl sm:rounded-3xl border border-white/10 hover:border-brand-gold/40 transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-gradient-to-br from-brand-red/30 via-red-900/20 to-transparent border border-brand-red/50 flex items-center justify-center text-red-300 shadow-[0_0_15px_rgba(211,47,47,0.3)] group-hover:scale-110 transition-transform mb-3.5 sm:mb-5">
+                            <i data-lucide="crown" class="w-5 h-5 sm:w-6 sm:h-6 text-red-400 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"></i>
+                        </div>
+                        <h3 class="font-serif text-base sm:text-lg md:text-xl font-bold text-white mb-1.5 sm:mb-2 group-hover:text-brand-gold transition-colors">Escalable: 15 a 150+ Pax</h3>
+                        <p class="text-xs sm:text-sm text-gray-300/90 leading-relaxed">
+                            Desde almuerzos de directorio de alta confidencialidad hasta agasajos de fin de año y aniversarios masivos. Múltiples paelleras gigantes en simultáneo.
+                        </p>
                     </div>
-                    <h3 class="font-serif text-xl font-bold text-white mb-2 group-hover:text-brand-gold transition-colors">Escalable: 15 a 150+ Pax</h3>
-                    <p class="text-xs sm:text-sm text-gray-400 leading-relaxed">
-                        Desde almuerzos de directorio de alta confidencialidad hasta agasajos de fin de año y aniversarios masivos. Múltiples paelleras gigantes en simultáneo.
-                    </p>
                 </div>
 
-                <div class="glass-card card-3d p-6 rounded-3xl border border-white/10 hover:border-brand-gold/40 transition-all duration-300 group">
-                    <div class="w-12 h-12 rounded-2xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold mb-5 group-hover:scale-110 transition-transform">
-                        <i data-lucide="shield-check" class="w-6 h-6"></i>
+                <!-- Card 3: Autonomía & Cero Fricción -->
+                <div class="snap-start shrink-0 w-[240px] sm:w-[260px] md:w-auto glass-card card-3d p-4 sm:p-5 md:p-6 rounded-2xl sm:rounded-3xl border border-white/10 hover:border-brand-gold/40 transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-gradient-to-br from-amber-400/25 via-brand-gold/15 to-transparent border border-amber-400/50 flex items-center justify-center text-amber-300 shadow-[0_0_15px_rgba(251,192,45,0.25)] group-hover:scale-110 transition-transform mb-3.5 sm:mb-5">
+                            <i data-lucide="shield-check" class="w-5 h-5 sm:w-6 sm:h-6 text-brand-gold drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"></i>
+                        </div>
+                        <h3 class="font-serif text-base sm:text-lg md:text-xl font-bold text-white mb-1.5 sm:mb-2 group-hover:text-brand-gold transition-colors">Autonomía &amp; Cero Fricción</h3>
+                        <p class="text-xs sm:text-sm text-gray-300/90 leading-relaxed">
+                            No requerimos el uso de la cocina de tu empresa. Llevamos estación propia, quemadores certificados, gas homologado, menaje y dejamos el área impecable.
+                        </p>
                     </div>
-                    <h3 class="font-serif text-xl font-bold text-white mb-2 group-hover:text-brand-gold transition-colors">Autonomía &amp; Cero Fricción</h3>
-                    <p class="text-xs sm:text-sm text-gray-400 leading-relaxed">
-                        No requerimos el uso de la cocina de tu empresa. Llevamos estación propia, quemadores certificados, gas homologado, menaje y dejamos el área impecable.
-                    </p>
                 </div>
 
-                <div class="glass-card card-3d p-6 rounded-3xl border border-white/10 hover:border-brand-gold/40 transition-all duration-300 group">
-                    <div class="w-12 h-12 rounded-2xl bg-brand-red/10 border border-brand-red/30 flex items-center justify-center text-brand-red mb-5 group-hover:scale-110 transition-transform">
-                        <i data-lucide="sparkles" class="w-6 h-6"></i>
+                <!-- Card 4: Networking & Team Spirit -->
+                <div class="snap-start shrink-0 w-[240px] sm:w-[260px] md:w-auto glass-card card-3d p-4 sm:p-5 md:p-6 rounded-2xl sm:rounded-3xl border border-white/10 hover:border-brand-gold/40 transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-gradient-to-br from-brand-red/30 via-red-900/20 to-transparent border border-brand-red/50 flex items-center justify-center text-red-300 shadow-[0_0_15px_rgba(211,47,47,0.3)] group-hover:scale-110 transition-transform mb-3.5 sm:mb-5">
+                            <i data-lucide="gem" class="w-5 h-5 sm:w-6 sm:h-6 text-red-400 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"></i>
+                        </div>
+                        <h3 class="font-serif text-base sm:text-lg md:text-xl font-bold text-white mb-1.5 sm:mb-2 group-hover:text-brand-gold transition-colors">Networking &amp; Team Spirit</h3>
+                        <p class="text-xs sm:text-sm text-gray-300/90 leading-relaxed">
+                            El show en vivo rompe el hielo formal. Clientes VIP, directores y colaboradores se reúnen en torno al fuego, fortaleciendo alianzas y clima laboral.
+                        </p>
                     </div>
-                    <h3 class="font-serif text-xl font-bold text-white mb-2 group-hover:text-brand-gold transition-colors">Networking &amp; Team Spirit</h3>
-                    <p class="text-xs sm:text-sm text-gray-400 leading-relaxed">
-                        El show en vivo rompe el hielo formal. Clientes VIP, directores y colaboradores se reúnen en torno al fuego, fortaleciendo alianzas y clima laboral.
-                    </p>
                 </div>
+            </div>
+
+            <!-- Mobile Swipe Hint -->
+            <div class="flex md:hidden items-center justify-center gap-1.5 text-[11px] text-brand-gold/80 -mt-3 mb-8 font-medium tracking-wide">
+                <i data-lucide="arrow-left-right" class="w-3.5 h-3.5 animate-pulse"></i> Desliza horizontalmente
             </div>
 
             <!-- Corporate Use Cases Banner -->
@@ -1582,20 +1629,29 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script>
         var swiper = new Swiper(".mySwiper", {
-            slidesPerView: 1,
-            spaceBetween: 30,
+            slidesPerView: 1.15,
+            spaceBetween: 14,
+            grabCursor: true,
+            touchRatio: 1.25,
+            touchAngle: 45,
+            threshold: 4,
+            resistanceRatio: 0.85,
+            speed: 550,
+            loop: true,
             pagination: {
                 el: ".swiper-pagination",
                 clickable: true,
                 dynamicBullets: true,
             },
             breakpoints: {
-                768: { slidesPerView: 2 },
-                1024: { slidesPerView: 3 },
+                640: { slidesPerView: 1.4, spaceBetween: 18 },
+                768: { slidesPerView: 2, spaceBetween: 24 },
+                1024: { slidesPerView: 3, spaceBetween: 30 },
             },
             autoplay: {
-                delay: 4000,
+                delay: 4500,
                 disableOnInteraction: false,
+                pauseOnMouseEnter: true,
             }
         });
 
@@ -2097,51 +2153,51 @@
         });
     </script>
     <!-- Modal Interactivo Tarjeta Digital NFC & Código QR (Mobile & Desktop) -->
-    <div id="nfcModal" class="fixed inset-0 z-[300] hidden items-center justify-center p-4 bg-black/85 backdrop-blur-md transition-opacity duration-300">
-        <div class="relative w-full max-w-md bg-brand-dark/95 border-2 border-brand-gold/40 rounded-3xl p-6 sm:p-8 text-center shadow-[0_0_60px_rgba(251,192,45,0.25)] laser-bevel animate-fadeIn">
-            <button id="closeNfcBtn" type="button" onclick="window.hideNfcModal && window.hideNfcModal();" title="Cerrar modal" aria-label="Cerrar modal" class="absolute top-4 right-4 text-gray-400 hover:text-white p-2 rounded-full hover:bg-white/10 transition-colors cursor-pointer">
-                <i data-lucide="x" class="w-6 h-6"></i>
+    <div id="nfcModal" class="fixed inset-0 z-[300] hidden overflow-y-auto overscroll-contain p-3 sm:p-4 py-6 sm:py-8 bg-black/85 backdrop-blur-md transition-opacity duration-300">
+        <div class="relative w-full max-w-md my-auto mx-auto bg-brand-dark/95 border-2 border-brand-gold/40 rounded-3xl p-4 sm:p-7 text-center shadow-[0_0_60px_rgba(251,192,45,0.25)] laser-bevel animate-fadeIn">
+            <button id="closeNfcBtn" type="button" onclick="window.hideNfcModal && window.hideNfcModal();" title="Cerrar modal" aria-label="Cerrar modal" class="absolute top-3 right-3 sm:top-4 sm:right-4 z-20 text-gray-300 hover:text-white bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors cursor-pointer">
+                <i data-lucide="x" class="w-5 h-5"></i>
             </button>
-            <div class="inline-flex items-center gap-2 bg-brand-red/20 border border-brand-red/40 text-brand-gold px-3.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-3">
+            <div class="inline-flex items-center gap-1.5 bg-brand-red/20 border border-brand-red/40 text-brand-gold px-3 py-1 rounded-full text-[9px] sm:text-[10px] font-bold uppercase tracking-widest mb-2 sm:mb-2.5">
                 <i data-lucide="zap" class="w-3.5 h-3.5 text-brand-gold"></i> Ecosistema Digital VRS2 Chef Fernando Corzo
             </div>
-            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white mb-2">Tarjeta Digital &amp; Contacto</h3>
-            <p class="text-xs sm:text-sm text-gray-300 mb-5 leading-relaxed">
-                Escanea el <strong>Código QR Oficial</strong> con tu smartphone para abrir la web y descargar la vCard directamente a tu agenda.
+            <h3 class="font-serif text-xl sm:text-2xl font-bold text-white mb-1.5 leading-tight">Tarjeta Digital &amp; Contacto</h3>
+            <p class="text-xs text-gray-300 mb-3 sm:mb-4 leading-relaxed max-w-xs mx-auto">
+                Escanea el <strong>Código QR Oficial</strong> o descarga mi contacto oficial (vCard) directo a tu agenda.
             </p>
-            <div class="bg-white p-3.5 rounded-2xl inline-block shadow-2xl mb-5 border border-brand-gold/30 ring-4 ring-brand-gold/20">
-                <img src="qr_vercel.png" alt="Código QR Fernando Corzo Paellas" class="w-48 sm:w-56 h-auto object-contain mx-auto rounded-lg" onerror="this.onerror=null; this.src='qr vercel.png'">
+            <div class="bg-white p-2.5 sm:p-3 rounded-2xl inline-block shadow-2xl mb-3 sm:mb-4 border border-brand-gold/30 ring-4 ring-brand-gold/20">
+                <img src="qr_vercel.png" alt="Código QR Fernando Corzo Paellas" class="w-36 sm:w-44 h-auto object-contain mx-auto rounded-lg" onerror="this.onerror=null; this.src='qr vercel.png'">
             </div>
-            <div class="space-y-2.5">
-                <a href="fernandocorzo.vcf" download="Fernando_Corzo_Chef.vcf" class="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-brand-gold to-yellow-500 text-brand-dark py-3.5 px-6 rounded-xl font-bold text-sm hover:brightness-110 transition-all shadow-lg shadow-brand-gold/20 cursor-pointer">
+            <div class="space-y-2">
+                <a href="fernandocorzo.vcf" download="Fernando_Corzo_Chef.vcf" class="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-brand-gold to-yellow-500 text-brand-dark py-3 px-5 rounded-xl font-bold text-xs sm:text-sm hover:brightness-110 transition-all shadow-lg shadow-brand-gold/20 cursor-pointer">
                     <i data-lucide="user-check" class="w-4 h-4"></i> Guardar Contacto en tu Celular (vCard)
                 </a>
-                <a href="https://wa.me/51994092336?text=Hola%20Chef%20Fernando%20Corzo,%20escane%C3%A9%20su%20c%C3%B3digo%20QR%20y%20deseo%20cotizar%20un%20evento." target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20bd5c] text-white py-3.5 px-6 rounded-xl font-bold text-sm transition-all shadow-lg shadow-[#25D366]/20">
+                <a href="https://wa.me/51994092336?text=Hola%20Chef%20Fernando%20Corzo,%20escane%C3%A9%20su%20c%C3%B3digo%20QR%20y%20deseo%20cotizar%20un%20evento." target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20bd5c] text-white py-3 px-5 rounded-xl font-bold text-xs sm:text-sm transition-all shadow-lg shadow-[#25D366]/20">
                     <i data-lucide="message-circle" class="w-4 h-4"></i> Iniciar Cotización por WhatsApp
                 </a>
                 <!-- Email & Phone Badges -->
-                <div class="grid grid-cols-2 gap-2 pt-1 text-left">
-                    <a href="mailto:fernandocorzo12@gmail.com" class="p-2.5 rounded-xl bg-white/5 border border-white/10 text-gray-300 hover:text-brand-gold hover:border-brand-gold/40 transition-all">
+                <div class="grid grid-cols-2 gap-2 pt-0.5 text-left">
+                    <a href="mailto:fernandocorzo12@gmail.com" class="p-2 sm:p-2.5 rounded-xl bg-white/5 border border-white/10 text-gray-300 hover:text-brand-gold hover:border-brand-gold/40 transition-all">
                         <span class="block text-[9px] uppercase tracking-wider text-gray-400 font-bold">Correo:</span>
                         <span class="block text-[11px] font-semibold text-white truncate">fernandocorzo12@gmail.com</span>
                     </a>
-                    <a href="https://wa.me/51994092336" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-xl bg-white/5 border border-white/10 text-gray-300 hover:text-emerald-300 hover:border-emerald-400/40 transition-all">
+                    <a href="https://wa.me/51994092336" target="_blank" rel="noopener noreferrer" class="p-2 sm:p-2.5 rounded-xl bg-white/5 border border-white/10 text-gray-300 hover:text-emerald-300 hover:border-emerald-400/40 transition-all">
                         <span class="block text-[9px] uppercase tracking-wider text-gray-400 font-bold">WhatsApp:</span>
                         <span class="block text-[11px] font-semibold text-white truncate">+51 994 092 336</span>
                     </a>
                 </div>
-                <div class="flex items-center justify-center gap-2 pt-1">
-                    <a href="https://www.facebook.com/profile.php?id=100057442428185" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-blue-600/20 border border-blue-500/40 text-blue-300 text-xs font-semibold hover:bg-blue-600/30">
+                <div class="flex items-center justify-center gap-2 pt-0.5">
+                    <a href="https://www.facebook.com/profile.php?id=100057442428185" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl bg-blue-600/20 border border-blue-500/40 text-blue-300 text-xs font-semibold hover:bg-blue-600/30">
                         <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                         <span>Facebook</span>
                     </a>
-                    <a href="https://www.instagram.com/fernandocorzochasseloup/" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-pink-600/20 border border-pink-500/40 text-pink-300 text-xs font-semibold hover:bg-pink-600/30">
+                    <a href="https://www.instagram.com/fernandocorzochasseloup/" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl bg-pink-600/20 border border-pink-500/40 text-pink-300 text-xs font-semibold hover:bg-pink-600/30">
                         <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.07M12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
                         <span>Instagram</span>
                     </a>
                 </div>
             </div>
-            <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-[11px] text-gray-400">
+            <div class="mt-3 sm:mt-4 pt-2.5 sm:pt-3 border-t border-white/10 flex items-center justify-between text-[11px] text-gray-400">
                 <a href="#tarjeta-digital" id="linkGoToSectionFromModal" onclick="window.hideNfcModal && window.hideNfcModal();" class="text-brand-gold hover:underline flex items-center gap-1">
                     <span>Ver sección completa</span> &darr;
                 </a>
@@ -2151,45 +2207,45 @@
     </div>
 
     <!-- Modal Redes Sociales Oficiales (Mobile & Desktop) -->
-    <div id="socialsModal" class="fixed inset-0 z-[300] hidden items-center justify-center p-4 bg-black/85 backdrop-blur-md transition-opacity duration-300">
-        <div class="relative w-full max-w-sm bg-brand-dark/95 border-2 border-pink-500/40 rounded-3xl p-6 text-center shadow-[0_0_60px_rgba(236,72,153,0.25)] laser-bevel animate-fadeIn">
-            <button id="closeSocialsBtn" type="button" onclick="window.hideSocialsModal && window.hideSocialsModal();" title="Cerrar redes sociales" aria-label="Cerrar redes sociales" class="absolute top-4 right-4 text-gray-400 hover:text-white p-2 rounded-full hover:bg-white/10 transition-colors cursor-pointer">
+    <div id="socialsModal" class="fixed inset-0 z-[300] hidden overflow-y-auto overscroll-contain p-3 sm:p-4 py-6 sm:py-8 bg-black/85 backdrop-blur-md transition-opacity duration-300">
+        <div class="relative w-full max-w-sm my-auto mx-auto bg-brand-dark/95 border-2 border-pink-500/40 rounded-3xl p-4 sm:p-6 text-center shadow-[0_0_60px_rgba(236,72,153,0.25)] laser-bevel animate-fadeIn">
+            <button id="closeSocialsBtn" type="button" onclick="window.hideSocialsModal && window.hideSocialsModal();" title="Cerrar redes sociales" aria-label="Cerrar redes sociales" class="absolute top-3 right-3 sm:top-4 sm:right-4 z-20 text-gray-300 hover:text-white bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors cursor-pointer">
                 <i data-lucide="x" class="w-5 h-5"></i>
             </button>
-            <div class="inline-flex items-center gap-2 bg-pink-500/10 border border-pink-500/30 text-pink-300 px-3.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-3">
+            <div class="inline-flex items-center gap-1.5 bg-pink-500/10 border border-pink-500/30 text-pink-300 px-3 py-1 rounded-full text-[9px] sm:text-[10px] font-bold uppercase tracking-widest mb-2 sm:mb-3">
                 <i data-lucide="share-2" class="w-3.5 h-3.5 text-pink-400"></i> Redes Oficiales
             </div>
-            <h3 class="font-serif text-2xl font-bold text-white mb-1">Chef Fernando Corzo</h3>
-            <p class="text-xs text-gray-300 mb-5">
+            <h3 class="font-serif text-xl sm:text-2xl font-bold text-white mb-1 leading-tight">Chef Fernando Corzo</h3>
+            <p class="text-xs text-gray-300 mb-3 sm:mb-4 leading-relaxed">
                 Sigue el contenido exclusivo, transmisiones en vivo y eventos gastronómicos privados.
             </p>
-            <div class="space-y-3">
-                <a href="https://www.instagram.com/fernandocorzochasseloup/" target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-between p-3.5 rounded-2xl bg-gradient-to-r from-pink-600/20 via-purple-600/20 to-pink-600/20 border border-pink-500/40 text-white hover:border-pink-400 transition-all group">
+            <div class="space-y-2.5">
+                <a href="https://www.instagram.com/fernandocorzochasseloup/" target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-between p-3 rounded-2xl bg-gradient-to-r from-pink-600/20 via-purple-600/20 to-pink-600/20 border border-pink-500/40 text-white hover:border-pink-400 transition-all group">
                     <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-pink-500/20 border border-pink-500/30 flex items-center justify-center text-pink-400 group-hover:scale-110 transition-transform">
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.07M12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        <div class="w-9 h-9 rounded-xl bg-pink-500/20 border border-pink-500/30 flex items-center justify-center text-pink-400 group-hover:scale-110 transition-transform">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.07M12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
                         </div>
                         <div class="text-left">
                             <span class="block text-xs font-bold text-white">Instagram Oficial</span>
-                            <span class="block text-[11px] text-pink-300">@fernandocorzochasseloup</span>
+                            <span class="block text-[10px] text-pink-300">@fernandocorzochasseloup</span>
                         </div>
                     </div>
-                    <i data-lucide="external-link" class="w-4 h-4 text-pink-300"></i>
+                    <i data-lucide="external-link" class="w-3.5 h-3.5 text-pink-300"></i>
                 </a>
-                <a href="https://www.facebook.com/profile.php?id=100057442428185" target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-between p-3.5 rounded-2xl bg-gradient-to-r from-blue-600/20 via-sky-600/20 to-blue-600/20 border border-blue-500/40 text-white hover:border-blue-400 transition-all group">
+                <a href="https://www.facebook.com/profile.php?id=100057442428185" target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-between p-3 rounded-2xl bg-gradient-to-r from-blue-600/20 via-sky-600/20 to-blue-600/20 border border-blue-500/40 text-white hover:border-blue-400 transition-all group">
                     <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform">
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        <div class="w-9 h-9 rounded-xl bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                         </div>
                         <div class="text-left">
                             <span class="block text-xs font-bold text-white">Facebook Oficial</span>
-                            <span class="block text-[11px] text-blue-300">Fernando Corzo Paellas</span>
+                            <span class="block text-[10px] text-blue-300">Fernando Corzo Paellas</span>
                         </div>
                     </div>
-                    <i data-lucide="external-link" class="w-4 h-4 text-blue-300"></i>
+                    <i data-lucide="external-link" class="w-3.5 h-3.5 text-blue-300"></i>
                 </a>
             </div>
-            <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs text-gray-400">
+            <div class="mt-3 sm:mt-4 pt-2.5 sm:pt-3 border-t border-white/10 flex items-center justify-between text-xs text-gray-400">
                 <button type="button" id="btnSwitchToQrModal" onclick="window.showNfcModal && window.showNfcModal(); return false;" class="text-brand-gold hover:underline flex items-center gap-1 cursor-pointer">
                     <i data-lucide="qr-code" class="w-3.5 h-3.5"></i> Ver Tarjeta QR
                 </button>
@@ -2213,6 +2269,7 @@
                 nfc.classList.remove('hidden');
                 nfc.classList.add('flex');
                 nfc.style.display = 'flex';
+                document.body.classList.add('overflow-hidden');
                 if(window.lucide) lucide.createIcons();
             }
         };
@@ -2223,6 +2280,7 @@
                 nfc.classList.add('hidden');
                 nfc.classList.remove('flex');
                 nfc.style.display = 'none';
+                document.body.classList.remove('overflow-hidden');
             }
         };
 
@@ -2239,6 +2297,7 @@
                 soc.classList.remove('hidden');
                 soc.classList.add('flex');
                 soc.style.display = 'flex';
+                document.body.classList.add('overflow-hidden');
                 if(window.lucide) lucide.createIcons();
             }
         };
@@ -2249,8 +2308,16 @@
                 soc.classList.add('hidden');
                 soc.classList.remove('flex');
                 soc.style.display = 'none';
+                document.body.classList.remove('overflow-hidden');
             }
         };
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                window.hideNfcModal && window.hideNfcModal();
+                window.hideSocialsModal && window.hideSocialsModal();
+            }
+        });
     </script>
 
     <!-- Modal Planificador de Calendario para Eventos (Mobile Android & Small Height Responsive) -->

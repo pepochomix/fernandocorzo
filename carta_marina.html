@@ -166,8 +166,30 @@
             from { opacity: 0; transform: scale(0.96) translateY(8px); }
             to { opacity: 1; transform: scale(1) translateY(0); }
         }
+        /* Modal Universal Mobile-Safe Scrolling and Centering */
+        #nfcModalMarino, #socialsModalMarina {
+            overflow-y: auto !important;
+            overscroll-behavior: contain !important;
+        }
+        #nfcModalMarino.flex, #socialsModalMarina.flex {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            justify-content: flex-start !important;
+        }
         .animate-fadeIn {
             animation: modalFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .touch-pan-x {
+            touch-action: pan-x !important;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+            width: 0px;
+            height: 0px;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
         }
 
         /* Divertido Marco Marino: Animaciones SVG de Criaturas del Mar y Ecualizador */
@@ -723,36 +745,57 @@
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="glass-ocean p-8 rounded-3xl border border-sky-500/20 hover:border-sky-400 transition-all duration-300 group hover:-translate-y-1">
-                    <div class="w-14 h-14 rounded-2xl bg-sky-500/10 border border-sky-400/30 flex items-center justify-center text-sky-400 mb-6 group-hover:scale-110 transition-transform">
-                        <i data-lucide="sparkles" class="w-7 h-7"></i>
+            <!-- Ecuación del Valor: Desplazamiento Horizontal en Mobile & Iconos de Lujo -->
+            <div class="flex md:grid md:grid-cols-3 gap-3.5 sm:gap-5 md:gap-6 overflow-x-auto md:overflow-visible pb-4 pt-1 px-4 -mx-4 md:px-0 md:mx-0 snap-x snap-mandatory no-scrollbar touch-pan-x">
+                <!-- Card 1: Show Culinario Participativo -->
+                <div class="snap-start shrink-0 w-[260px] sm:w-[280px] md:w-auto glass-ocean p-5 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl border border-sky-500/30 hover:border-sky-400 transition-all duration-300 group hover:-translate-y-1 flex flex-col justify-between">
+                    <div>
+                        <!-- Icono de Lujo Reducido en Mobile -->
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-xl sm:rounded-2xl bg-gradient-to-br from-sky-400/25 via-sky-500/10 to-transparent border border-sky-400/50 flex items-center justify-center text-sky-300 shadow-[0_0_18px_rgba(56,189,248,0.25)] group-hover:scale-110 transition-transform mb-3.5 sm:mb-5">
+                            <i data-lucide="sparkles" class="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 drop-shadow-[0_2px_4px_rgba(56,189,248,0.6)]"></i>
+                        </div>
+                        <span class="inline-block text-[10px] sm:text-xs font-bold uppercase tracking-wider text-sky-400/90 mb-1.5">Impacto Visual &amp; Sabor</span>
+                        <h3 class="font-serif text-lg sm:text-xl md:text-2xl font-bold text-white mb-2 sm:mb-3">Show Culinario Participativo</h3>
+                        <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">
+                            Tus invitados no solo comen: interactúan con el chef, observan el flameado al pisco, sienten los aromas de los ajíes tostados y descubren los secretos de la auténtica leche de tigre peruana.
+                        </p>
                     </div>
-                    <h3 class="font-serif text-2xl font-bold text-white mb-3">Show Culinario Participativo</h3>
-                    <p class="text-sm text-gray-300 leading-relaxed">
-                        Tus invitados no solo comen: interactúan con el chef, observan el flameado al pisco, sienten los aromas de los ajíes tostados y descubren los secretos de la auténtica leche de tigre peruana.
-                    </p>
                 </div>
 
-                <div class="glass-ocean p-8 rounded-3xl border border-brand-gold/20 hover:border-brand-gold transition-all duration-300 group hover:-translate-y-1">
-                    <div class="w-14 h-14 rounded-2xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold mb-6 group-hover:scale-110 transition-transform">
-                        <i data-lucide="package-check" class="w-7 h-7"></i>
+                <!-- Card 2: Servicio 100% "Done-For-You" -->
+                <div class="snap-start shrink-0 w-[260px] sm:w-[280px] md:w-auto glass-ocean p-5 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl border border-brand-gold/40 hover:border-brand-gold transition-all duration-300 group hover:-translate-y-1 flex flex-col justify-between bg-gradient-to-b from-ocean-card to-amber-950/20">
+                    <div>
+                        <!-- Icono de Lujo Reducido en Mobile -->
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-xl sm:rounded-2xl bg-gradient-to-br from-amber-400/30 via-brand-gold/15 to-transparent border border-amber-400/60 flex items-center justify-center text-amber-300 shadow-[0_0_18px_rgba(251,192,45,0.3)] group-hover:scale-110 transition-transform mb-3.5 sm:mb-5">
+                            <i data-lucide="crown" class="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 drop-shadow-[0_2px_4px_rgba(251,192,45,0.7)]"></i>
+                        </div>
+                        <span class="inline-block text-[10px] sm:text-xs font-bold uppercase tracking-wider text-amber-300/90 mb-1.5">Cero Estrés de Organización</span>
+                        <h3 class="font-serif text-lg sm:text-xl md:text-2xl font-bold text-white mb-2 sm:mb-3">Servicio 100% "Done-For-You"</h3>
+                        <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">
+                            Llegamos con toda la estación marina, quemadores, menaje gourmet, hielo frappé y tablas de corte. Cocinamos, servimos y dejamos el espacio totalmente limpio. Tú solo te dedicas a ser el mejor anfitrión.
+                        </p>
                     </div>
-                    <h3 class="font-serif text-2xl font-bold text-white mb-3">Servicio 100% "Done-For-You"</h3>
-                    <p class="text-sm text-gray-300 leading-relaxed">
-                        Llegamos con toda la estación marina, quemadores, menaje gourmet, hielo frappé y tablas de corte. Cocinamos, servimos y dejamos el espacio totalmente limpio. Tú solo te dedicas a ser el mejor anfitrión.
-                    </p>
                 </div>
 
-                <div class="glass-ocean p-8 rounded-3xl border border-sky-500/20 hover:border-sky-400 transition-all duration-300 group hover:-translate-y-1">
-                    <div class="w-14 h-14 rounded-2xl bg-sky-500/10 border border-sky-400/30 flex items-center justify-center text-sky-400 mb-6 group-hover:scale-110 transition-transform">
-                        <i data-lucide="award" class="w-7 h-7"></i>
+                <!-- Card 3: Porciones Abundantes & Calidad A1 -->
+                <div class="snap-start shrink-0 w-[260px] sm:w-[280px] md:w-auto glass-ocean p-5 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl border border-emerald-500/30 hover:border-emerald-400 transition-all duration-300 group hover:-translate-y-1 flex flex-col justify-between">
+                    <div>
+                        <!-- Icono de Lujo Reducido en Mobile -->
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-xl sm:rounded-2xl bg-gradient-to-br from-emerald-400/25 via-sky-500/10 to-transparent border border-emerald-400/50 flex items-center justify-center text-emerald-300 shadow-[0_0_18px_rgba(52,211,153,0.25)] group-hover:scale-110 transition-transform mb-3.5 sm:mb-5">
+                            <i data-lucide="award" class="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 drop-shadow-[0_2px_4px_rgba(52,211,153,0.6)]"></i>
+                        </div>
+                        <span class="inline-block text-[10px] sm:text-xs font-bold uppercase tracking-wider text-emerald-400/90 mb-1.5">Insumos 100% Frescos A1</span>
+                        <h3 class="font-serif text-lg sm:text-xl md:text-2xl font-bold text-white mb-2 sm:mb-3">Porciones Abundantes &amp; Calidad A1</h3>
+                        <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">
+                            Nuestra reputación se sostiene en la generosidad: nadie se queda con hambre. Seleccionamos mariscos grandes, corvina fresca y acompañamientos premium para que la experiencia sea insuperable.
+                        </p>
                     </div>
-                    <h3 class="font-serif text-2xl font-bold text-white mb-3">Porciones Abundantes &amp; Calidad A1</h3>
-                    <p class="text-sm text-gray-300 leading-relaxed">
-                        Nuestra reputación se sostiene en la generosidad: nadie se queda con hambre. Seleccionamos mariscos grandes, corvina fresca y acompañamientos premium para que la experiencia sea insuperable.
-                    </p>
                 </div>
+            </div>
+
+            <!-- Indicador visual de deslizamiento en Mobile -->
+            <div class="flex md:hidden items-center justify-center gap-1.5 text-[11px] text-sky-400/80 mt-2 font-medium tracking-wide">
+                <i data-lucide="arrow-left-right" class="w-3.5 h-3.5 animate-pulse"></i> Desliza horizontalmente
             </div>
         </div>
     </section>
@@ -1229,51 +1272,51 @@
     </a>
 
     <!-- Modal Interactivo Tarjeta Digital NFC & Código QR Marino (Mobile & Desktop) -->
-    <div id="nfcModalMarino" class="fixed inset-0 z-[300] hidden items-center justify-center p-4 bg-black/85 backdrop-blur-md transition-opacity duration-300">
-        <div class="relative w-full max-w-md bg-ocean-dark border-2 border-sky-400/40 rounded-3xl p-6 sm:p-8 text-center shadow-[0_0_60px_rgba(2,132,199,0.35)] laser-ocean-bevel animate-fadeIn">
-            <button id="closeNfcBtnMarino" type="button" onclick="window.hideNfcModalMarino && window.hideNfcModalMarino();" title="Cerrar modal" aria-label="Cerrar modal" class="absolute top-4 right-4 text-gray-400 hover:text-white p-2 rounded-full hover:bg-white/10 transition-colors cursor-pointer">
-                <i data-lucide="x" class="w-6 h-6"></i>
+    <div id="nfcModalMarino" class="fixed inset-0 z-[300] hidden overflow-y-auto overscroll-contain p-3 sm:p-4 py-6 sm:py-8 bg-black/85 backdrop-blur-md transition-opacity duration-300">
+        <div class="relative w-full max-w-md my-auto mx-auto bg-ocean-dark border-2 border-sky-400/40 rounded-3xl p-4 sm:p-7 text-center shadow-[0_0_60px_rgba(2,132,199,0.35)] laser-ocean-bevel animate-fadeIn">
+            <button id="closeNfcBtnMarino" type="button" onclick="window.hideNfcModalMarino && window.hideNfcModalMarino();" title="Cerrar modal" aria-label="Cerrar modal" class="absolute top-3 right-3 sm:top-4 sm:right-4 z-20 text-gray-300 hover:text-white bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors cursor-pointer">
+                <i data-lucide="x" class="w-5 h-5"></i>
             </button>
-            <div class="inline-flex items-center gap-2 bg-sky-500/20 border border-sky-400/40 text-sky-300 px-3.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-3">
+            <div class="inline-flex items-center gap-1.5 bg-sky-500/20 border border-sky-400/40 text-sky-300 px-3 py-1 rounded-full text-[9px] sm:text-[10px] font-bold uppercase tracking-widest mb-2 sm:mb-2.5">
                 <i data-lucide="zap" class="w-3.5 h-3.5 text-sky-400"></i> Ecosistema Digital Chef Fernando Corzo
             </div>
-            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white mb-2">Tarjeta Digital &amp; Contacto</h3>
-            <p class="text-xs sm:text-sm text-gray-300 mb-5 leading-relaxed">
-                Escanea el <strong>Código QR Oficial</strong> con tu smartphone para abrir la web y descargar la vCard directamente a tu agenda.
+            <h3 class="font-serif text-xl sm:text-2xl font-bold text-white mb-1.5 leading-tight">Tarjeta Digital &amp; Contacto</h3>
+            <p class="text-xs text-gray-300 mb-3 sm:mb-4 leading-relaxed max-w-xs mx-auto">
+                Escanea el <strong>Código QR Oficial</strong> o descarga mi contacto oficial (vCard) directo a tu agenda.
             </p>
-            <div class="bg-white p-3.5 rounded-2xl inline-block shadow-2xl mb-5 border border-sky-400/30 ring-4 ring-sky-400/20">
-                <img src="qr_vercel.png" alt="Código QR Fernando Corzo Carta Marina" class="w-48 sm:w-56 h-auto object-contain mx-auto rounded-lg" onerror="this.onerror=null; this.src='qr vercel.png'">
+            <div class="bg-white p-2.5 sm:p-3 rounded-2xl inline-block shadow-2xl mb-3 sm:mb-4 border border-sky-400/30 ring-4 ring-sky-400/20">
+                <img src="qr_vercel.png" alt="Código QR Fernando Corzo Carta Marina" class="w-36 sm:w-44 h-auto object-contain mx-auto rounded-lg" onerror="this.onerror=null; this.src='qr vercel.png'">
             </div>
-            <div class="space-y-2.5">
-                <a href="fernandocorzo.vcf" download="Fernando_Corzo_Chef.vcf" class="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-sky-500 to-blue-600 text-white py-3.5 px-6 rounded-xl font-bold text-sm hover:brightness-110 transition-all shadow-lg shadow-sky-500/25 cursor-pointer">
+            <div class="space-y-2">
+                <a href="fernandocorzo.vcf" download="Fernando_Corzo_Chef.vcf" class="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-sky-500 to-blue-600 text-white py-3 px-5 rounded-xl font-bold text-xs sm:text-sm hover:brightness-110 transition-all shadow-lg shadow-sky-500/25 cursor-pointer">
                     <i data-lucide="user-check" class="w-4 h-4"></i> Guardar Contacto en tu Celular (vCard)
                 </a>
-                <a href="https://wa.me/51994092336?text=Hola%20Chef%20Fernando%20Corzo,%20escane%C3%A9%20su%20c%C3%B3digo%20QR%20y%20deseo%20cotizar%20un%20evento%20marino." target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20bd5c] text-white py-3.5 px-6 rounded-xl font-bold text-sm transition-all shadow-lg shadow-[#25D366]/20">
+                <a href="https://wa.me/51994092336?text=Hola%20Chef%20Fernando%20Corzo,%20escane%C3%A9%20su%20c%C3%B3digo%20QR%20y%20deseo%20cotizar%20un%20evento%20marino." target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20bd5c] text-white py-3 px-5 rounded-xl font-bold text-xs sm:text-sm transition-all shadow-lg shadow-[#25D366]/20">
                     <i data-lucide="message-circle" class="w-4 h-4"></i> Iniciar Cotización por WhatsApp
                 </a>
                 <!-- Email & Phone Direct Badges -->
-                <div class="grid grid-cols-2 gap-2 pt-1 text-left">
-                    <a href="mailto:fernandocorzo12@gmail.com" class="p-2.5 rounded-xl bg-white/5 border border-white/10 text-gray-300 hover:text-sky-300 hover:border-sky-400/40 transition-all">
+                <div class="grid grid-cols-2 gap-2 pt-0.5 text-left">
+                    <a href="mailto:fernandocorzo12@gmail.com" class="p-2 sm:p-2.5 rounded-xl bg-white/5 border border-white/10 text-gray-300 hover:text-sky-300 hover:border-sky-400/40 transition-all">
                         <span class="block text-[9px] uppercase tracking-wider text-gray-400 font-bold">Correo:</span>
                         <span class="block text-[11px] font-semibold text-white truncate">fernandocorzo12@gmail.com</span>
                     </a>
-                    <a href="https://wa.me/51994092336" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-xl bg-white/5 border border-white/10 text-gray-300 hover:text-emerald-300 hover:border-emerald-400/40 transition-all">
+                    <a href="https://wa.me/51994092336" target="_blank" rel="noopener noreferrer" class="p-2 sm:p-2.5 rounded-xl bg-white/5 border border-white/10 text-gray-300 hover:text-emerald-300 hover:border-emerald-400/40 transition-all">
                         <span class="block text-[9px] uppercase tracking-wider text-gray-400 font-bold">WhatsApp:</span>
                         <span class="block text-[11px] font-semibold text-white truncate">+51 994 092 336</span>
                     </a>
                 </div>
-                <div class="flex items-center justify-center gap-2 pt-1">
-                    <a href="https://www.facebook.com/profile.php?id=100057442428185" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-blue-600/20 border border-blue-500/40 text-blue-300 text-xs font-semibold hover:bg-blue-600/30">
+                <div class="flex items-center justify-center gap-2 pt-0.5">
+                    <a href="https://www.facebook.com/profile.php?id=100057442428185" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl bg-blue-600/20 border border-blue-500/40 text-blue-300 text-xs font-semibold hover:bg-blue-600/30">
                         <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                         <span>Facebook</span>
                     </a>
-                    <a href="https://www.instagram.com/fernandocorzochasseloup/" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-pink-600/20 border border-pink-500/40 text-pink-300 text-xs font-semibold hover:bg-pink-600/30">
+                    <a href="https://www.instagram.com/fernandocorzochasseloup/" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl bg-pink-600/20 border border-pink-500/40 text-pink-300 text-xs font-semibold hover:bg-pink-600/30">
                         <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.07M12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
                         <span>Instagram</span>
                     </a>
                 </div>
             </div>
-            <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-[11px] text-gray-400">
+            <div class="mt-3 sm:mt-4 pt-2.5 sm:pt-3 border-t border-white/10 flex items-center justify-between text-[11px] text-gray-400">
                 <a href="#tarjeta-digital" id="linkGoToSectionFromModalMarina" onclick="window.hideNfcModalMarino && window.hideNfcModalMarino();" class="text-sky-300 hover:underline flex items-center gap-1">
                     <span>Ver sección completa</span> &darr;
                 </a>
@@ -1283,45 +1326,45 @@
     </div>
 
     <!-- Modal Redes Sociales Oficiales Marina (Mobile & Desktop) -->
-    <div id="socialsModalMarina" class="fixed inset-0 z-[300] hidden items-center justify-center p-4 bg-black/85 backdrop-blur-md transition-opacity duration-300">
-        <div class="relative w-full max-w-sm bg-ocean-dark border-2 border-pink-500/40 rounded-3xl p-6 text-center shadow-[0_0_60px_rgba(236,72,153,0.25)] laser-ocean-bevel animate-fadeIn">
-            <button id="closeSocialsBtnMarina" type="button" onclick="window.hideSocialsModalMarina && window.hideSocialsModalMarina();" title="Cerrar redes sociales" aria-label="Cerrar redes sociales" class="absolute top-4 right-4 text-gray-400 hover:text-white p-2 rounded-full hover:bg-white/10 transition-colors cursor-pointer">
+    <div id="socialsModalMarina" class="fixed inset-0 z-[300] hidden overflow-y-auto overscroll-contain p-3 sm:p-4 py-6 sm:py-8 bg-black/85 backdrop-blur-md transition-opacity duration-300">
+        <div class="relative w-full max-w-sm my-auto mx-auto bg-ocean-dark border-2 border-pink-500/40 rounded-3xl p-4 sm:p-6 text-center shadow-[0_0_60px_rgba(236,72,153,0.25)] laser-ocean-bevel animate-fadeIn">
+            <button id="closeSocialsBtnMarina" type="button" onclick="window.hideSocialsModalMarina && window.hideSocialsModalMarina();" title="Cerrar redes sociales" aria-label="Cerrar redes sociales" class="absolute top-3 right-3 sm:top-4 sm:right-4 z-20 text-gray-300 hover:text-white bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors cursor-pointer">
                 <i data-lucide="x" class="w-5 h-5"></i>
             </button>
-            <div class="inline-flex items-center gap-2 bg-pink-500/10 border border-pink-500/30 text-pink-300 px-3.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-3">
+            <div class="inline-flex items-center gap-1.5 bg-pink-500/10 border border-pink-500/30 text-pink-300 px-3 py-1 rounded-full text-[9px] sm:text-[10px] font-bold uppercase tracking-widest mb-2 sm:mb-3">
                 <i data-lucide="share-2" class="w-3.5 h-3.5 text-pink-400"></i> Redes Oficiales
             </div>
-            <h3 class="font-serif text-2xl font-bold text-white mb-1">Chef Fernando Corzo</h3>
-            <p class="text-xs text-gray-300 mb-5">
+            <h3 class="font-serif text-xl sm:text-2xl font-bold text-white mb-1 leading-tight">Chef Fernando Corzo</h3>
+            <p class="text-xs text-gray-300 mb-3 sm:mb-4 leading-relaxed">
                 Sigue la cocina marina en vivo, festivales de ceviche y eventos privados.
             </p>
-            <div class="space-y-3">
-                <a href="https://www.instagram.com/fernandocorzochasseloup/" target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-between p-3.5 rounded-2xl bg-gradient-to-r from-pink-600/20 via-purple-600/20 to-pink-600/20 border border-pink-500/40 text-white hover:border-pink-400 transition-all group">
+            <div class="space-y-2.5">
+                <a href="https://www.instagram.com/fernandocorzochasseloup/" target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-between p-3 rounded-2xl bg-gradient-to-r from-pink-600/20 via-purple-600/20 to-pink-600/20 border border-pink-500/40 text-white hover:border-pink-400 transition-all group">
                     <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-pink-500/20 border border-pink-500/30 flex items-center justify-center text-pink-400 group-hover:scale-110 transition-transform">
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.07M12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        <div class="w-9 h-9 rounded-xl bg-pink-500/20 border border-pink-500/30 flex items-center justify-center text-pink-400 group-hover:scale-110 transition-transform">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.07M12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
                         </div>
                         <div class="text-left">
                             <span class="block text-xs font-bold text-white">Instagram Oficial</span>
-                            <span class="block text-[11px] text-pink-300">@fernandocorzochasseloup</span>
+                            <span class="block text-[10px] text-pink-300">@fernandocorzochasseloup</span>
                         </div>
                     </div>
-                    <i data-lucide="external-link" class="w-4 h-4 text-pink-300"></i>
+                    <i data-lucide="external-link" class="w-3.5 h-3.5 text-pink-300"></i>
                 </a>
-                <a href="https://www.facebook.com/profile.php?id=100057442428185" target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-between p-3.5 rounded-2xl bg-gradient-to-r from-blue-600/20 via-sky-600/20 to-blue-600/20 border border-blue-500/40 text-white hover:border-blue-400 transition-all group">
+                <a href="https://www.facebook.com/profile.php?id=100057442428185" target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-between p-3 rounded-2xl bg-gradient-to-r from-blue-600/20 via-sky-600/20 to-blue-600/20 border border-blue-500/40 text-white hover:border-blue-400 transition-all group">
                     <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform">
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        <div class="w-9 h-9 rounded-xl bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                         </div>
                         <div class="text-left">
                             <span class="block text-xs font-bold text-white">Facebook Oficial</span>
-                            <span class="block text-[11px] text-blue-300">Fernando Corzo Paellas</span>
+                            <span class="block text-[10px] text-blue-300">Fernando Corzo Paellas</span>
                         </div>
                     </div>
-                    <i data-lucide="external-link" class="w-4 h-4 text-blue-300"></i>
+                    <i data-lucide="external-link" class="w-3.5 h-3.5 text-blue-300"></i>
                 </a>
             </div>
-            <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs text-gray-400">
+            <div class="mt-3 sm:mt-4 pt-2.5 sm:pt-3 border-t border-white/10 flex items-center justify-between text-xs text-gray-400">
                 <button type="button" id="btnSwitchToQrModalMarina" onclick="window.showNfcModalMarino && window.showNfcModalMarino(); return false;" class="text-sky-300 hover:underline flex items-center gap-1 cursor-pointer">
                     <i data-lucide="qr-code" class="w-3.5 h-3.5"></i> Ver Tarjeta QR
                 </button>
@@ -1345,6 +1388,7 @@
                 nfc.classList.remove('hidden');
                 nfc.classList.add('flex');
                 nfc.style.display = 'flex';
+                document.body.classList.add('overflow-hidden');
                 if(window.lucide) lucide.createIcons();
             }
         };
@@ -1355,6 +1399,7 @@
                 nfc.classList.add('hidden');
                 nfc.classList.remove('flex');
                 nfc.style.display = 'none';
+                document.body.classList.remove('overflow-hidden');
             }
         };
 
@@ -1371,6 +1416,7 @@
                 soc.classList.remove('hidden');
                 soc.classList.add('flex');
                 soc.style.display = 'flex';
+                document.body.classList.add('overflow-hidden');
                 if(window.lucide) lucide.createIcons();
             }
         };
@@ -1381,8 +1427,16 @@
                 soc.classList.add('hidden');
                 soc.classList.remove('flex');
                 soc.style.display = 'none';
+                document.body.classList.remove('overflow-hidden');
             }
         };
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                window.hideNfcModalMarino && window.hideNfcModalMarino();
+                window.hideSocialsModalMarina && window.hideSocialsModalMarina();
+            }
+        });
     </script>
 
     <!-- Bottom NavBar (Mobile Only) for Marine Experience with QR & Socials Integration -->
