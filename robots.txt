@@ -1,13 +1,15 @@
 # Robots.txt para Fernando Corzo Paellas y Más
-# Optimizado para rastreo e indexación de Googlebot y Bingbot
+# Optimizado para rastreo e indexación de Googlebot, Bingbot e IA
 
 User-agent: *
 Allow: /
+Allow: /*.webp
 Allow: /*.png
 Allow: /*.jpg
 Allow: /*.jpeg
 Allow: /*.mp4
 Allow: /*.svg
+Allow: /llms.txt
 
 # Sitemap oficial
 Sitemap: https://fernandocorzo.vercel.app/sitemap.xml
