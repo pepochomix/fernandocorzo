@@ -4,3 +4,7 @@ Thumbs.db
 .vercel
 node_modules/
 pdf_page_*.png
+.venv/
+*/.venv/
+__pycache__/
+*.pyc
